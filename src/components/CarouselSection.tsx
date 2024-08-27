@@ -87,12 +87,134 @@ const SVGComponent = () => (
   </svg>
 );
 
-const CarouselSection: React.FC = () => {
+const Box = () => {
   return (
-    <div className="h-[805px]">
-      <SVGComponent />
+    <div className="top-[165px] left-[94px]">
+      <h1>Box</h1>
     </div>
   );
+};
+
+const CarouselSection: React.FC = () => {
+  return (
+    <div className="relative h-[805px]">
+      <SVGComponent />
+      <div className="absolute top-0 z-100 max-w-[1440px]">
+        {/* Rectangle 46 */}
+        <div className="absolute w-[203px] h-[140px] left-[351px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 55 */}
+        <div className="absolute w-[204px] h-[140px] left-[1044px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 63 */}
+        <div className="absolute w-[204px] h-[140px] left-[119px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 64 */}
+        <div className="absolute w-[204px] h-[140px] left-[-112px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 47 */}
+        <div className="absolute w-[203px] h-[140px] left-[582px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 56 */}
+        <div className="absolute w-[165px] h-[140px] left-[1275px] top-[347px] bg-[#FFFFFF] rounded-l-[30px]" />
+
+        {/* Rectangle 49 */}
+        <div className="absolute w-[204px] h-[140px] left-[460px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 48 */}
+        <div className="absolute w-[204px] h-[140px] left-[812px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 57 */}
+        {/* <div className="absolute w-[222px] h-[153px] left-[1579px] top-[500px] bg-[#D9D9D9] rounded-[50px]" /> */}
+
+        {/* Rectangle 50 */}
+        <div className="absolute w-[203px] h-[140px] left-[692px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 60 */}
+        {/* <div className="absolute w-[222px] h-[153px] left-[-295px] top-[676px] bg-[#D9D9D9] rounded-[50px]" /> */}
+
+        {/* Rectangle 58 */}
+        <div className="absolute w-[204px] h-[140px] left-[923px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 61 */}
+        <div className="absolute w-[203px] h-[140px] left-[-2px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 59 */}
+        <div className="absolute w-[204px] h-[140px] left-[1154px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+        {/* Rectangle 65 */}
+        <div className="absolute w-[55px] h-[140px] left-[1385px] top-[509px] bg-[#FFFFFF] rounded-l-[30px]" />
+
+        {/* Rectangle 62 */}
+        <div className="absolute w-[204px] h-[140px] left-[229px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+      </div>
+    </div>
+  );
+  // return (
+  //   <div className="relative w-[1440px] h-[806px] bg-[#F3F6FA] flex-none order-2 flex-grow-0">
+  //     {/* BG Blur */}
+  //     <div className="absolute w-full h-full left-[1732px] top-2 bg-[#0A1330] rounded-[50px] rotate-90" />
+
+  //     {/* Ellipse 16 */}
+  //     <div className="absolute w-[657.93px] h-[991.88px] left-[937.88px] top-[548px] bg-[#85FF9A] opacity-40 blur-[179.435px] rotate-90" />
+
+  //     {/* Ellipse 17 */}
+  //     <div className="absolute w-[657.93px] h-[991.88px] left-[2541.68px] top-[-188.96px] bg-[#4285F4] opacity-40 blur-[179.435px] rotate-90" />
+
+  //     {/* Trusted by 1000+ Brokers & Developers */}
+  //     <div className="absolute w-[984px] h-[143px] left-[518px] top-[calc(50%-143px/2-810px)] flex items-end text-center text-[#FFFFFF] text-[67px] leading-[71px] font-semibold">
+  //       Trusted by 1000+ Brokers & Developers.
+  //     </div>
+
+  //     {/* Rectangle 46 */}
+  //     <div className="absolute w-[203px] h-[140px] left-[351px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 55 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[1044px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 63 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[119px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 64 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[-112px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 47 */}
+  //     <div className="absolute w-[203px] h-[140px] left-[582px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 56 */}
+  //     <div className="absolute w-[203px] h-[140px] left-[1275px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 49 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[460px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 48 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[812px] top-[347px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 57 */}
+  //     <div className="absolute w-[222px] h-[153px] left-[1579px] top-[500px] bg-[#D9D9D9] rounded-[50px]" />
+
+  //     {/* Rectangle 50 */}
+  //     <div className="absolute w-[203px] h-[140px] left-[692px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 60 */}
+  //     <div className="absolute w-[222px] h-[153px] left-[-295px] top-[676px] bg-[#D9D9D9] rounded-[50px]" />
+
+  //     {/* Rectangle 58 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[923px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 61 */}
+  //     <div className="absolute w-[203px] h-[140px] left-[-2px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 59 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[1154px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 65 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[1385px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+
+  //     {/* Rectangle 62 */}
+  //     <div className="absolute w-[204px] h-[140px] left-[229px] top-[509px] bg-[#FFFFFF] rounded-[30px]" />
+  //   </div>
+  // );
 };
 
 export default CarouselSection;

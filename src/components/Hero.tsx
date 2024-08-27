@@ -1,4 +1,4 @@
-import * as React from "react";
+import AppButton from "./AppButton";
 
 const SVGComponent = () => (
   <svg
@@ -30,7 +30,34 @@ const SVGComponent = () => (
 export default function Hero() {
   return (
     <div className="h-[850px] bg-white">
+      <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[30px]">
+        <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px] flex items-end">
+          One platform for the real estate ecosystem 
+        </h1>
+
+        <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto perspiciatis architecto amet nobis veritatis expedita nisi voluptate itaque dolorem. Facilis?</p>
+
+        <div className="flex flex-row gap-4">
+          <AppButton title="App Store" subtitle="Download on the" />
+          <AppButton  title="Play Store" subtitle="Get it on" />
+        </div>
+      </div>
       <SVGComponent />
     </div>
   );
+
+  // /* Frame 48 */
+
+  // /* Auto layout */
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // padding: 0px;
+  // gap: 30px;
+
+  // position: absolute;
+  // width: 581px;
+  // height: 402px;
+  // left: 80px;
+  // top: 287px;
 }
