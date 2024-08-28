@@ -80,7 +80,7 @@ const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
 
 const DownloadsSection = () => {
   return (
-    <div className="relative h-[805px] w-full bg-white">
+    <div className="relative h-[805px] w-[1440px] bg-white">
       <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[270px] left-[200px] gap-[30px]">
         <h1 className="text-black font-inter font-medium text-[67px] leading-[71px]">
           Its time to level up your game

@@ -2,7 +2,7 @@ import Heading from "./Heading";
 
 const CardsSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-evenly h-[1152px] bg-white">
+    <div className="flex flex-col items-center justify-evenly h-[1152px] w-[1440px] bg-white">
       <Heading title="Packed with everything you need" />
       <img
         src={"/assets/cards.png"}
