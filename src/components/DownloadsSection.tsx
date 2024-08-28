@@ -58,8 +58,16 @@ const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
         colorInterpolationFilters="sRGB"
       >
         <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feGaussianBlur stdDeviation={179.435} result="effect1_foregroundBlur_405_2591" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={179.435}
+          result="effect1_foregroundBlur_405_2591"
+        />
       </filter>
       <filter
         id="filter1_f_405_2591"
@@ -71,8 +79,16 @@ const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
         colorInterpolationFilters="sRGB"
       >
         <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feGaussianBlur stdDeviation={179.435} result="effect1_foregroundBlur_405_2591" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={179.435}
+          result="effect1_foregroundBlur_405_2591"
+        />
       </filter>
     </defs>
   </svg>
@@ -84,6 +100,10 @@ const DownloadsSection = () => {
       <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[270px] left-[200px] gap-[30px]">
         <h1 className="text-black font-inter font-medium text-[67px] leading-[71px]">
           Its time to level up your game
+          <span className="text-[#0ECC88]">
+          {" "}
+          .
+        </span>
         </h1>
 
         <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px]">
@@ -91,8 +111,11 @@ const DownloadsSection = () => {
         </p>
 
         <div className="flex flex-row gap-4">
-          <AppButton title="App Store" subtitle="Download on the" />
-          <AppButton  title="Play Store" subtitle="Get it on" />
+          {/* <AppButton title="App Store" subtitle="Download on the" />
+          <AppButton  title="Play Store" subtitle="Get it on" /> */}
+          <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
+            Join the waitlist
+          </button>
         </div>
       </div>
       <div className="w-full h-full flex items-center justify-center">

@@ -9,9 +9,20 @@ const SVGComponent = () => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
-    <rect x={-109} y={-11} width={1707} height={873} fill="url(#pattern0_405_2447)" />
+    <rect
+      x={-109}
+      y={-11}
+      width={1707}
+      height={873}
+      fill="url(#pattern0_405_2447)"
+    />
     <defs>
-      <pattern id="pattern0_405_2447" patternContentUnits="objectBoundingBox" width={1} height={1}>
+      <pattern
+        id="pattern0_405_2447"
+        patternContentUnits="objectBoundingBox"
+        width={1}
+        height={1}
+      >
         <use
           xlinkHref="#image0_405_2447"
           transform="matrix(0.00030226 0 0 0.000591017 -0.0168642 0)"
@@ -31,15 +42,24 @@ export default function Hero() {
   return (
     <div className="h-[850px] bg-white">
       <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[30px]">
-        <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px] flex items-end">
-          One platform for the real estate ecosystem 
+        <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px]">
+          One platform for the real estate ecosystem
+          <span className="text-[#0ECC88]"> .</span>
         </h1>
 
-        <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto perspiciatis architecto amet nobis veritatis expedita nisi voluptate itaque dolorem. Facilis?</p>
+        <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum
+          magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto
+          perspiciatis architecto amet nobis veritatis expedita nisi voluptate
+          itaque dolorem. Facilis?
+        </p>
 
         <div className="flex flex-row gap-4">
-          <AppButton title="App Store" subtitle="Download on the" />
-          <AppButton  title="Play Store" subtitle="Get it on" />
+          {/* <AppButton title="App Store" subtitle="Download on the" />
+          <AppButton  title="Play Store" subtitle="Get it on" /> */}
+          <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
+            Join the waitlist
+          </button>
         </div>
       </div>
       <SVGComponent />
