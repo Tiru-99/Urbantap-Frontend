@@ -13,8 +13,8 @@ function Navbar() {
         <li className="flex-none order-1 grow-0 text-[16px] font-semibold">Download app</li>
       </ul>
 
-      <button className="text-black font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-gradient-to-b from-[#4DD969] to-[#28CD56] rounded-[30px]">
-        Sign up now
+      <button className="text-black font-semibold py-2 px-2 text-[16px] mx-auto w-[164px] h-[53px] bg-gradient-to-b from-[#4DD969] to-[#28CD56] rounded-[30px]">
+        Join the waitlist
       </button>
     </nav>
   );

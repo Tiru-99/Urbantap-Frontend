@@ -18,7 +18,7 @@ const ReviewsSection: React.FC = () => {
           Abdul Mohammed Bari
         </div>
         <div className="w-[220px] h-[20px] text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%] flex items-end">
-          Real estate broker at Finfarm
+          Broker at AMS Real Estate
         </div>
       </div>
       <ImageAnimations />

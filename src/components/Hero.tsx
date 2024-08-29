@@ -41,18 +41,18 @@ const SVGComponent = () => (
 export default function Hero() {
   return (
     <div className="h-[850px] bg-white">
-      <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[30px]">
+      <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[40px]">
         <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px]">
           One platform for the real estate ecosystem
           <span className="text-[#0ECC88]"> .</span>
         </h1>
 
-        <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
+        {/* <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum
           magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto
           perspiciatis architecto amet nobis veritatis expedita nisi voluptate
           itaque dolorem. Facilis?
-        </p>
+        </p> */}
 
         <div className="flex flex-row gap-4">
           {/* <AppButton title="App Store" subtitle="Download on the" />
@@ -65,19 +65,4 @@ export default function Hero() {
       <SVGComponent />
     </div>
   );
-
-  // /* Frame 48 */
-
-  // /* Auto layout */
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-start;
-  // padding: 0px;
-  // gap: 30px;
-
-  // position: absolute;
-  // width: 581px;
-  // height: 402px;
-  // left: 80px;
-  // top: 287px;
 }
