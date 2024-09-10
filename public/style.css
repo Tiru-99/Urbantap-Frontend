@@ -1,0 +1,81 @@
+.bg-main {
+  background-color: #dfdfdf !important;
+}
+.card-gray{
+  background-color: #F3F6FA !important;
+  border-radius: 20px !important;
+}
+.h1-card{
+  padding-bottom: 50px !important;
+  padding-top: 50px !important;
+}
+.bg-white{
+  background-color: #fff;
+}
+.light-card-img{
+  height: 267px !important;
+}
+.img-rounded{
+  border-radius: 10.5rem !important;
+}
+.fs-70{
+  font-size: 70px !important;
+}
+.green-dot{
+  color:#0ECC88 ;
+}
+.fs-40{
+  font-size: 40px !important;
+}
+.herosvg{
+  width: 100% !important;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #dfdfdf;
+  }
+  nav {
+    width: 87% !important;
+    margin-left: 22px !important;
+    gap: 40px !important;
+  }
+  .hero {
+    padding-top: 134px !important;
+  }
+  .fs-40{
+    font-size: 35px !important;
+  }
+  .bg-main {
+    background-color: rgb(14, 204, 136);
+  }
+  .hero h1 {
+    color: #000000 !important;
+  }
+  .hero p {
+    color: gray;
+  }
+  .card-gray img{
+    border-radius: 35% !important;
+  }
+  .light-card-img{
+    height: auto !important;
+  }
+  .h1-card{
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+  }
+  .download-app-section{
+    padding: 29px !important;
+    position: relative;
+    /* padding-bottom: 50px; */
+   
+  }
+  .inner-download{
+    border-radius: 25px !important;
+    padding-bottom: 287px !important;
+  }
+  .download-image{
+    position: absolute !important;
+    bottom: 0;
+  }
+}

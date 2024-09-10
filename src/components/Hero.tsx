@@ -4,6 +4,7 @@ const SVGComponent = () => (
   <svg
     width={1440}
     height={850}
+    className="herosvg"
     viewBox="0 0 1440 850"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -40,29 +41,65 @@ const SVGComponent = () => (
 
 export default function Hero() {
   return (
-    <div className="h-[850px] bg-white">
-      <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[40px]">
-        <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px]">
-          One platform for the real estate ecosystem
-          <span className="text-[#0ECC88]"> .</span>
-        </h1>
+    <>
+      <div className="w-[1440px] h-[850px] bg-white hidden md:block " id="about">
+        <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[40px]">
+          <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px]">
+            One platform for the real estate ecosystem
+            <span className="text-[#0ECC88]"> .</span>
+          </h1>
 
-        {/* <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
+          {/* <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum
           magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto
           perspiciatis architecto amet nobis veritatis expedita nisi voluptate
           itaque dolorem. Facilis?
         </p> */}
 
-        <div className="flex flex-row gap-4">
-          {/* <AppButton title="App Store" subtitle="Download on the" />
+          <div className="flex flex-row gap-4">
+            {/* <AppButton title="App Store" subtitle="Download on the" />
           <AppButton  title="Play Store" subtitle="Get it on" /> */}
-          <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
-            Join the waitlist
-          </button>
+            <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
+              Join the waitlist
+            </button>
+          </div>
+        </div>
+        <SVGComponent />
+      </div>
+      <div className="grid grid-cols-1 gap-4 p-4 md:hidden mt-25 hero bg-main">
+        {/* First row: h1 and paragraph */}
+        <div className="flex flex-col items-start">
+          <h1 className="text-4xl font-bold mb-2">
+            One platform for the real estate ecosystem
+          </h1>
+          <p className="text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+          </p>
+        </div>
+        {/* Second row: App Store and Play Store images */}
+        <div className="flex gap-4">
+          <img
+            src="./appstore.png"
+            alt="Play Store"
+            className="w-32 h-auto"
+          />
+          <img
+            src="./playstore.png"
+            alt="App Store"
+            className="w-32 h-auto"
+          />
+        </div>
+        {/* Third row: Single image */}
+        <div className="flex justify-center w-100">
+          <img
+            src="./mobile.png"
+            alt="Single Image"
+            className="w-full h-auto max-w-sm"
+          />
         </div>
       </div>
-      <SVGComponent />
-    </div>
+    </>
   );
 }
