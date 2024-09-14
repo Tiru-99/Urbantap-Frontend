@@ -100,7 +100,7 @@ export default function Hero() {
         {/* Third row: Single image */}
         <div className="flex justify-center w-100">
           <img
-            src="./mobile.png"
+            src="./mobile.svg"
             alt="Single Image"
             className="w-full h-auto max-w-sm"
           />
