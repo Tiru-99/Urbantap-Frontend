@@ -34,6 +34,7 @@ const ReviewsSection: React.FC = () => {
 
       <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block bg-white">
       <AwesomeSlider className="section-width">
+        
         <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block bg-white">
           {/* Review Text Section */}
           <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center lg:text-left px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%] pt-10 lg:mt-0">
