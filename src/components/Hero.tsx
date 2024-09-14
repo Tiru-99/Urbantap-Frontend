@@ -42,7 +42,10 @@ const SVGComponent = () => (
 export default function Hero() {
   return (
     <>
-      <div className="w-[1440px] h-[850px] bg-white hidden md:block " id="about">
+      <div
+        className="w-[1440px] h-[850px] bg-white hidden md:block "
+        id="about"
+      >
         <div className="absolute flex flex-col items-start w-[581px] h-[402px] top-[287px] left-[80px] gap-[40px]">
           <h1 className="text-black font-inter font-semibold text-[67px] leading-[71px]">
             One platform for the real estate ecosystem
@@ -79,8 +82,8 @@ export default function Hero() {
           </p>
         </div>
         {/* Second row: App Store and Play Store images */}
-        <div className="flex gap-4">
-          <img
+        <div className="flex gap- text-start">
+          {/* <img
             src="./appstore.png"
             alt="Play Store"
             className="w-32 h-auto"
@@ -89,7 +92,10 @@ export default function Hero() {
             src="./playstore.png"
             alt="App Store"
             className="w-32 h-auto"
-          />
+          /> */}
+          <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
+            Join the waitlist
+          </button>
         </div>
         {/* Third row: Single image */}
         <div className="flex justify-center w-100">

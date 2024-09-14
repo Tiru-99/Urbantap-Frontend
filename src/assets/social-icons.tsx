@@ -23,25 +23,26 @@ export const SOCIAL_ICONS_SVGS = [
   //     </svg>
   //   ),
   // },
-  {
-    id: "twitter",
-    svg: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18.3263 1.90405H21.6998L14.3297 10.3275L23 21.79H16.2112L10.894 14.8381L4.80995 21.79H1.43443L9.31743 12.7801L1 1.90405H7.96111L12.7674 8.25838L18.3263 1.90405ZM17.1423 19.7708H19.0116L6.94539 3.81718H4.93946L17.1423 19.7708Z"
-          fill="white"
-        />
-      </svg>
-    ),
-  },
+  // {
+  //   id: "twitter",
+  //   svg: (
+  //     <svg
+  //       width="24"
+  //       height="24"
+  //       viewBox="0 0 24 24"
+  //       fill="none"
+  //       xmlns="http://www.w3.org/2000/svg"
+  //     >
+  //       <path
+  //         d="M18.3263 1.90405H21.6998L14.3297 10.3275L23 21.79H16.2112L10.894 14.8381L4.80995 21.79H1.43443L9.31743 12.7801L1 1.90405H7.96111L12.7674 8.25838L18.3263 1.90405ZM17.1423 19.7708H19.0116L6.94539 3.81718H4.93946L17.1423 19.7708Z"
+  //         fill="white"
+  //       />
+  //     </svg>
+  //   ),
+  // },
   {
     id: "instagram",
+    link:"https://www.instagram.com/urbantap.io?igsh=MXdndnFhZnFiZ2Vneg==",
     svg: (
       <svg
         width="24"
@@ -66,6 +67,7 @@ export const SOCIAL_ICONS_SVGS = [
   },
   {
     id: "linkedin",
+    link:"https://www.linkedin.com/company/urbantap-io/",
     svg: (
       <svg
         width="24"

@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Hero />
       <CardsSection />
-      <CarouselSection />
-      <Developer/>
+      {/* <CarouselSection /> */}
+      {/* <Developer/> */}
       <ReviewsSection />
       <DownloadsSection />
       <Downloadapp/>

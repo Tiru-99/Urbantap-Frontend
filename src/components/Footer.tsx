@@ -55,38 +55,38 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative w-full h-auto bg-[#0A1330] text-white flex flex-col items-start px-4 sm:px-8 py-8 sm:py-12">
-      <div className="w-full max-w-[1440px] flex flex-col sm:flex-row justify-between">
+    <footer className="relative w-full h-auto bg-[#0A1330] text-white flex flex-col section-width items-start px-4 sm:px-8 py-8 sm:py-12">
+      <div className="w-full max-w-[1440px] flex flex-col sm:flex-row content-footer">
         {/* Left side - Logo and text */}
         <div className="flex flex-col items-start sm:items-start">
           <UrbantapLogoWhite />
-          <div className="flex flex-col justify-center items-start p-0 gap-2 mt-4">
+          <div className="flex flex-col justify-center items-start p-0 gap-2 mt-4 footer-bt">
             <h1 className="text-sm font-semibold leading-[125%] text-[#D5F6FB] opacity-30">
               © urbantap LLC. 2024
             </h1>
             <p className="text-xs sm:text-sm leading-[125%] text-white opacity-30 text-left">
-              © 2024 UrbanTap LLC. All trademarks, names, and logos are property
-              of UrbanTap LLC and are registered or used in the UAE.
-              Unauthorized use is prohibited.
+              © 2024 UrbanTap LLC. All trademarks, names,<br/> and logos are property
+              of UrbanTap LLC and are<br/> registered or used in the UAE.
+              Unauthorized use is<br/> prohibited.
             </p>
           </div>
         </div>
 
         {/* Right side - Links and social icons */}
-        <div className="flex flex-col items-start sm:items-start mt-6 sm:mt-0">
+        <div className="flex flex-col items-start sm:items-start mt-6 sm:mt-0 footer-li">
           <div className="flex flex-col items-start sm:items-start gap-4">
-            <div className="text-sm font-medium text-[#F3F5F8]">
+            {/* <div className="text-sm font-medium text-[#F3F5F8]">
               Privacy Policy
-            </div>
-            <div className="text-sm font-medium text-[#F3F5F8]">
+            </div> */}
+            {/* <div className="text-sm font-medium text-[#F3F5F8]">
               Terms & Conditions
-            </div>
-            <div className="text-sm font-medium text-[#F3F5F8]">Legal</div>
+            </div> */}
+            {/* <div className="text-sm font-medium text-[#F3F5F8]">Legal</div> */}
           </div>
           <div className="flex flex-row items-center gap-6 mt-4">
             {SOCIAL_ICONS_SVGS.map((icon) => (
               <div key={icon.id} className="w-6 h-6">
-                {icon.svg}
+               <a href={icon.link} target="_blank" >{icon.svg}</a> 
               </div>
             ))}
           </div>

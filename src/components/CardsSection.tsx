@@ -17,7 +17,7 @@ const CardsSection: React.FC = () => {
           alt="cards"
         />
       </div> */}
-      <div className="bg-white pb-10">
+      <div className="bg-white pb-10 section-width">
         <div className="container mx-auto px-4 bg-white ">
           <div className="h1-card hidden lg:block md:block">
             <h1 className="text-4xl lg:text-5xl fs-70 text-black text-center">
@@ -40,11 +40,12 @@ const CardsSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4"> */}
             {/* First Column - First Card with Two Inner Columns */}
-            <Card1
-              title={"Tap to Connect"}
-              desc="Easily Shareble NFC cards with data & reviews"
-              img="card1"
-              img2="tap"
+         
+                    <Card1
+              title="Connect & Explore"
+              img="card4"
+              img2="explore"
+              desc="Networking platform for every stackholder in real estate"
             />
             {/* </div> */}
             <div className="col-span-1 flex flex-col gap-4">
@@ -62,10 +63,10 @@ const CardsSection: React.FC = () => {
             </div>
             {/* Third Column - One Card */}
             <Card1
-              title="Connect & Explore"
-              img="card4"
-              img2="explore"
-              desc="Networking platform for every stackholder in real estate"
+              title={"Tap to Connect"}
+              desc="Easily Shareble NFC cards with data & reviews"
+              img="card1"
+              img2="tap"
             />
           </div>
 
