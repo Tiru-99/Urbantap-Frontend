@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
         {/* Left side - Logo and text */}
         <div className="flex flex-col items-start sm:items-start">
           <UrbantapLogoWhite />
-          <div className="flex flex-col justify-center items-start p-0 gap-2 mt-4 footer-bt">
+          <div className="flex flex-col justify-center items-start p-0 gap-2 mt-4">
             <h1 className="text-sm font-semibold leading-[125%] text-[#D5F6FB] opacity-30">
               © urbantap LLC. 2024
             </h1>

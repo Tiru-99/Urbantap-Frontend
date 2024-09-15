@@ -16,7 +16,7 @@ const Card3: React.FC<{ title?: string; desc?: string; img?: string,img2:string 
       </div>
 
       {/* Image Section */}
-      <div className="w-1/2 order-1 sm:order-2">
+      <div className="w-1/2 card-img order-1 sm:order-2">
         <img
           src={`./assets/img/card/${img}.png`}
           alt="Card Image"

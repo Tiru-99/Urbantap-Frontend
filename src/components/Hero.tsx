@@ -98,11 +98,11 @@ export default function Hero() {
           </button>
         </div>
         {/* Third row: Single image */}
-        <div className="flex justify-center w-100">
+        <div className="flex justify-center w-100 heroimg-div">
           <img
             src="./mobile.svg"
             alt="Single Image"
-            className="w-full h-auto max-w-sm"
+            className="w-full h-auto max-w-sm hero-img"
           />
         </div>
       </div>

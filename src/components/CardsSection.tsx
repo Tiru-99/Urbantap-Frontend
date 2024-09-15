@@ -17,27 +17,27 @@ const CardsSection: React.FC = () => {
           alt="cards"
         />
       </div> */}
-      <div className="bg-white pb-10 section-width">
+      <div className="bg-white  section-width">
         <div className="container mx-auto px-4 bg-white ">
           <div className="h1-card hidden lg:block md:block">
-            <h1 className="text-4xl lg:text-5xl fs-70 text-black text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold fs-70 text-black text-center">
               Packed with everything{" "}
             </h1>
-            <h1 className="text-4xl lg:text-5xl fs-70 text-black text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold fs-70 text-black text-center">
               you need{""}&nbsp;<span className="green-dot">.</span>
             </h1>
           </div>
-          <div className="h1-card block md:hidden">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl fs-40 text-black md:text-center text-start">
+          <div className="h1-card block md:hidden mobile-pack">
+            <h1 className="text-2xl sm:text-4xl font-bold lg:text-5xl fs-40 text-black md:text-center text-start">
               Packed with{" "}
             </h1>
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl fs-40 text-black md:text-center text-start">
+            <h1 className="text-2xl sm:text-4xl font-bold lg:text-5xl fs-40 text-black md:text-center text-start">
               everything you need{""}&nbsp;<span className="green-dot">.</span>
             </h1>
           </div>
 
           {/* First Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 card-div">
             {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4"> */}
             {/* First Column - First Card with Two Inner Columns */}
          
@@ -71,7 +71,7 @@ const CardsSection: React.FC = () => {
           </div>
 
           {/* Second Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 card-div">
             <Card3
               title="Expanded Reach"
               desc="Brand Awareness for developers their projects"
