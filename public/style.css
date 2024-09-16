@@ -9,6 +9,12 @@ body {
   background-color: #f3f6fa !important;
   border-radius: 30px !important;
 }
+.mobile-card{
+  background-color: #f3f6fa !important;
+}
+.p-text{
+  color: grey;
+}
 .h1-card {
   padding-bottom: 50px !important;
   padding-top: 50px !important;
@@ -105,6 +111,8 @@ body {
   .join-btn {
     margin-left: 0px !important;
     width: 96px !important;
+    position: absolute;
+    right: 12px !important;
   }
   .hero-img{
     width: 273px !important;
@@ -142,7 +150,7 @@ body {
     padding-top: 50px !important;
   }
   .download-app-section {
-    padding: 29px !important;
+    padding: 19px !important;
     position: relative;
 
     /* padding-bottom: 50px; */

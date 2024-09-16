@@ -41,8 +41,6 @@ const ReviewsSection: React.FC = () => {
             <p className="block text-start">
               "The NFC-powered app has transformed how I connect with industry
               professionals in Dubai—
-            </p>
-            <p className="block text-start">
               effortless contact sharing and a major boost in productivity."
             </p>
             <p className="block text-[#0ECC88] mt-4 text-start">
