@@ -5,13 +5,20 @@ const Downloadapp = () => {
     <div className="download-app-section bg-white  md:hidden sm:block">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 p-4 bg-gradient-to-bl from-blue-100 to-green-100 inner-download">
         {/* First Column: Title, Paragraph, and Store Logos */}
-        <div className="flex flex-col justify-center items-center text-start p-4 ">
-          <h1 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-            Its your time to level up your game.
+        <div className="flex flex-col justify-center  text-start p-4 ">
+          <h1 className="mobileapp-h1 text-black ">
+            Its your time to 
           </h1>
-          <p className="text-black text-2xl mb-6 font-bold text-start">
+          <h1 className="mobileapp-h1 text-black mb-4">
+
+          level up your game.
+          </h1>
+          <div className="w-[156px]">
+
+          <p className="text-black mobileapp-p mb-6  text-start ">
             Download urbantap on your phone now!
           </p>
+          </div>
           <div className="flex justify-center gap-4 se">
             {/* App Store Logo */}
             {/* <img src="./appstore.png" alt="App Store" className="w-32 h-auto" />
@@ -32,7 +39,7 @@ const Downloadapp = () => {
         </div>
       </div>
       <div className="download-image">
-        <img src="./assets/phone.png" alt="" />
+        <img src="./assets/phone.png" alt=""  />
       </div>
     </div>
   );

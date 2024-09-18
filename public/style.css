@@ -54,7 +54,7 @@ body {
 }
 
 .li-first {
-  padding-left: 30px !important;
+  padding-left: 16% !important;
 }
 
 .join-btn {
@@ -162,6 +162,12 @@ body {
     border-radius: 25px !important;
     padding-bottom: 287px !important;
   }
+  .mobile-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f3f6fa !important;
+  }
+
   .download-image {
     position: absolute !important;
     bottom: 0;
@@ -194,6 +200,17 @@ body {
     line-height: 20px;
     font-weight: 400;
 
+  }
+
+  .mobileapp-h1{
+    font-size: 28px !important;
+    font-weight: 600;
+    line-height: 33.6px !important;
+  }
+  .mobileapp-p{
+    font-size: 16px;
+    line-height: 20px !important;
+    font-weight: 600;
   }
   /* .card-img{
     width: 80px !important;
