@@ -37,25 +37,23 @@ const ReviewsSection: React.FC = () => {
         
         <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block bg-white">
           {/* Review Text Section */}
-          <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center lg:text-left px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%] pt-10 lg:mt-0">
-            <p className="block">
+          <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center lg:text-left px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%]  lg:mt-0">
+            <p className="block text-start">
               "The NFC-powered app has transformed how I connect with industry
               professionals in Dubai—
-            </p>
-            <p className="block">
               effortless contact sharing and a major boost in productivity."
             </p>
-            <p className="block text-[#0ECC88] mt-4">
+            <p className="block text-[#0ECC88] mt-4 text-start">
               An essential tool for every real estate professional!
             </p>
           </div>
 
           {/* Reviewer Info */}
-          <div className="flex flex-col justify-center items-center w-full h-auto lg:w-[251px] lg:h-[55px] mx-auto mt-10 lg:mt-0">
-            <div className="w-full lg:w-[220px] text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-center lg:text-left">
+          <div className="flex flex-col ml-3 justify-center items-center w-full h-auto lg:w-[251px] lg:h-[55px] mx-auto mt-10 lg:mt-0">
+            <div className="w-full lg:w-[220px] text-start text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-center lg:text-left">
               Abdul Mohammed Bari
             </div>
-            <div className="w-full lg:w-[220px] text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-center lg:text-left">
+            <div className="w-full ml-2 text-start ms-5 lg:w-[220px] text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-center lg:text-left">
               Broker at AMS Real Estate
             </div>
           </div>

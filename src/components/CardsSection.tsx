@@ -1,6 +1,7 @@
 import Card1 from "./card/card1.componet";
 import Card2 from "./card/card2.component";
 import Card3 from "./card/card3.component";
+import MobileCardComponent from "./card/mobilecard.component";
 import GreenDot from "./GreenDot";
 import Heading from "./Heading";
 
@@ -17,31 +18,31 @@ const CardsSection: React.FC = () => {
           alt="cards"
         />
       </div> */}
-      <div className="bg-white pb-10 section-width">
+      <div className="bg-white  section-width">
         <div className="container mx-auto px-4 bg-white ">
           <div className="h1-card hidden lg:block md:block">
-            <h1 className="text-4xl lg:text-5xl fs-70 text-black text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold fs-70 text-black text-center">
               Packed with everything{" "}
             </h1>
-            <h1 className="text-4xl lg:text-5xl fs-70 text-black text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold fs-70 text-black text-center">
               you need{""}&nbsp;<span className="green-dot">.</span>
             </h1>
           </div>
-          <div className="h1-card block md:hidden">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl fs-40 text-black md:text-center text-start">
+          <div className="h1-card block md:hidden mobile-pack">
+            <h1 className="text-2xl sm:text-4xl font-bold lg:text-5xl fs-40 text-black md:text-center text-start">
               Packed with{" "}
             </h1>
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl fs-40 text-black md:text-center text-start">
+            <h1 className="text-2xl sm:text-4xl font-bold lg:text-5xl fs-40 text-black md:text-center text-start">
               everything you need{""}&nbsp;<span className="green-dot">.</span>
             </h1>
           </div>
-
+<div className="hidden md:block">
           {/* First Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 card-div">
             {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4"> */}
             {/* First Column - First Card with Two Inner Columns */}
-         
-                    <Card1
+
+            <Card1
               title="Connect & Explore"
               img="card4"
               img2="explore"
@@ -71,7 +72,7 @@ const CardsSection: React.FC = () => {
           </div>
 
           {/* Second Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 card-div ">
             <Card3
               title="Expanded Reach"
               desc="Brand Awareness for developers their projects"
@@ -85,7 +86,45 @@ const CardsSection: React.FC = () => {
               img2="cur"
             />
           </div>
+          </div>
         </div>
+      </div>
+
+      <div className="bg-white  section-width block md:hidden pb-2">
+        <MobileCardComponent
+          title="Connect & Explore"
+          img="explore1"
+          img2="explore1"
+          desc="Networking platform for every stackholder in real estate"
+        />
+        <MobileCardComponent
+          title="Broker Database"
+          desc="Consolidation brokers data of UAE "
+          img="broker1"
+        />
+        <MobileCardComponent
+          title="Talent Hub"
+          desc="Job posting & Talent Acquisition"
+          img="talent1"
+        />
+        <MobileCardComponent
+          title={"Tap to Connect"}
+          desc="Easily Shareble NFC cards with data & reviews"
+          img="tap1"
+          img2="tap1"
+        />
+        <MobileCardComponent
+          title="Expanded Reach"
+          desc="Brand Awareness for developers & their projects"
+          img="expand1"
+          img2="expand1"
+        />
+        <MobileCardComponent
+          title="Curated Real Estate Listings"
+          img="cur1"
+          desc="A Moderated feed of real estate asks & sells available across UAE"
+          img2="cur1"
+        />
       </div>
     </>
   );

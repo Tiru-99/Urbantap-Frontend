@@ -11,7 +11,7 @@ const Card2: React.FC<{ title?: string; desc?: string; img?: string }> = ({
       <div className="bg-white rounded-lg border h-full p-4 card-gray">
         <div className="flex flex-row items-center gap-4">
           {/* Image Side */}
-          <div className="w-1/2">
+          <div className="w-1/2 card-img">
             <img
               src={`./assets/img/card/${img}.png`}
               alt="Placeholder Image"

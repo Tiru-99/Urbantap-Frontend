@@ -7,7 +7,13 @@ body {
 }
 .card-gray {
   background-color: #f3f6fa !important;
-  border-radius: 20px !important;
+  border-radius: 30px !important;
+}
+.mobile-card{
+  background-color: #f3f6fa !important;
+}
+.p-text{
+  color: grey;
 }
 .h1-card {
   padding-bottom: 50px !important;
@@ -48,7 +54,7 @@ body {
 }
 
 .li-first {
-  padding-left: 30px !important;
+  padding-left: 16% !important;
 }
 
 .join-btn {
@@ -98,10 +104,25 @@ body {
   nav {
     width: 87% !important;
     margin-left: 22px !important;
+    height: 68px !important;
     gap: 40px !important;
+    padding-left: 2rem !important;
   }
   .join-btn {
     margin-left: 0px !important;
+    width: 96px !important;
+    position: absolute;
+    right: 12px !important;
+  }
+  .hero-img{
+    width: 273px !important;
+  }
+  .heroimg-div{
+    padding-top: 14px !important;
+  }
+  .mobile-pack>h1{
+    padding-bottom: 6px !important;
+    line-height: 33.6px !important;
   }
   .hero {
     padding-top: 134px !important;
@@ -129,7 +150,7 @@ body {
     padding-top: 50px !important;
   }
   .download-app-section {
-    padding: 29px !important;
+    padding: 19px !important;
     position: relative;
 
     /* padding-bottom: 50px; */
@@ -141,6 +162,12 @@ body {
     border-radius: 25px !important;
     padding-bottom: 287px !important;
   }
+  .mobile-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f3f6fa !important;
+  }
+
   .download-image {
     position: absolute !important;
     bottom: 0;
@@ -161,4 +188,34 @@ body {
   .awssld--organic-arrows{
     height: 450px !important;
   }
+  .card-div h1{
+    font-size: 17px !important;
+    line-height: 21.25px !important;
+    font-weight: 600 !important;
+    padding-bottom: 6px !important;
+  }
+
+  .card-div p{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+
+  }
+
+  .mobileapp-h1{
+    font-size: 28px !important;
+    font-weight: 600;
+    line-height: 33.6px !important;
+  }
+  .mobileapp-p{
+    font-size: 16px;
+    line-height: 20px !important;
+    font-weight: 600;
+  }
+  /* .card-img{
+    width: 80px !important;
+    height: 80px !important;
+    background: #FFFFFF;
+    border-radius: 50%;
+  } */
 }
