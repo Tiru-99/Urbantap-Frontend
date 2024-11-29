@@ -75,11 +75,11 @@ export default function Hero() {
           <h1 className="text-4xl font-bold mb-2">
             One platform for the real estate ecosystem
           </h1>
-          <p className="text-base">
+          {/* <p className="text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-          </p>
+          </p> */}
         </div>
         {/* Second row: App Store and Play Store images */}
         <div className="flex gap- text-start">
