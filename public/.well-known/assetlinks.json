@@ -1,0 +1,14 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.user.urbantap",
+        "sha256_cert_fingerprints": [
+          "96:69:EC:0B:46:64:68:42:39:CC:99:63:C1:73:77:7C:CC:48:0C:2E:78:92:56:A4:D7:FB:9B:AE:8D:87:22:79"
+        ]
+      }
+    }
+  ]

@@ -1,0 +1,21 @@
+{
+  "applinks":{
+    "apps":[
+       
+    ],
+    "details":[
+      {
+        "appIDs":[
+          "8QQ3K5W44Y.com.user.urbantap"
+        ],
+        "components":[
+          {
+            "/":"*",
+	    "exclude": false,
+            "comment": "Matches any URL with the specified scheme"
+          }
+        ]
+      }
+    ]
+  }
+}
