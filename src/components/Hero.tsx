@@ -55,12 +55,12 @@ export default function Hero() {
             <span className="text-[#0ECC88]"> .</span>
           </h1>
 
-          <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
+          {/* <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px] text-left">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe cum
             magni, dignissimos nemo unde ratione nobis vitae? Recusandae iusto
             perspiciatis architecto amet nobis veritatis expedita nisi voluptate
             itaque dolorem. Facilis?
-          </p>
+          </p> */}
 
           <div className="flex flex-row gap-4">
             {/* <AppButton title="App Store" subtitle="Download on the" />
@@ -81,11 +81,11 @@ export default function Hero() {
                   One platform<br></br>for the real estate<br></br> ecosystem
                 </h1>
              
-              <p className="text-base pt-4">
+              {/* <p className="text-base pt-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                 veniam, quis nostrud exercitation ullamco laboris nisi.
-              </p>
+              </p> */}
             </div>
             {/* Second row: App Store and Play Store images */}
             <div className="flex gap- text-start">

@@ -166,7 +166,7 @@ const CardsSection: React.FC = () => {
                     Your Customizable feed <br></br>Home Feed
                   </h2>
                   <p className="text-gray-600 text-sm">
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    {/* Lorem Ipsum Lorem Ipsum Lorem Ipsum */}
                   </p>
                 </div>
               </CardContent>
