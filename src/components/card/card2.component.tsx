@@ -1,4 +1,4 @@
-import { title } from "process";
+
 import React from "react";
 
 const Card2: React.FC<{ title?: string; desc?: string; img?: string }> = ({

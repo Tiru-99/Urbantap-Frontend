@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react"
-import { BackgroundSvg } from "./DownloadsSection"
+
 import Image from "next/image"
 
 const companies = [

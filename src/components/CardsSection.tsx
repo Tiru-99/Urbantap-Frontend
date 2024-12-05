@@ -1,11 +1,9 @@
-import Card1 from "./card/card1.componet";
-import Card2 from "./card/card2.component";
+
 import Card3 from "./card/card3.component";
 import MobileCardComponent from "./card/mobilecard.component";
 import { Card , CardContent } from "./ui/card";
 import Image from "next/image";
-import GreenDot from "./GreenDot";
-import Heading from "./Heading";
+
 
 const CardsSection: React.FC = () => {
   return (
