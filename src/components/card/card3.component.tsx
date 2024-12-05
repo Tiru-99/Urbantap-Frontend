@@ -8,7 +8,7 @@ const Card3: React.FC<{ title?: string; desc?: string; img?: string,img2:string 
   img2
 }) => {
   return (
-    <div className="bg-white rounded-lg border h-full p-4 flex items-center card-gray">
+    <div className="bg-[#F8F9FC] rounded-lg border h-full p-4 flex items-center card-gray">
       {/* Content Section */}
       <div className="w-1/2 ml-4 order-2 sm:order-1">
         <h1 className="text-black text-lg font-bold">{title}</h1>

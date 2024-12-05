@@ -3,11 +3,11 @@ import React from 'react'
 
 const Card1:React.FC<{title:string,desc:string,img:string,img2?:string}> = ({title,desc,img,img2}) => {
   return (
-    <div className="col-span-1 ">
+        <div className="col-span-1 ">
               <div className="bg-white rounded-lg border h-full p-4 card-gray">
                 <div className="flex flex-row sm:flex-col sm:grid sm:grid-cols-1 gap-4">
                   {/* First Inner Column (Image) */}
-                  <div className="w-1/2 card-img sm:w-full flex justify-center">
+                  <div className="w-1/2 card-img sm:w-full flex justify-center ">
                     <img
                       src={`./assets/img/card/${img}.png`}
                       alt="Placeholder Image"

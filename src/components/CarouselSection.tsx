@@ -103,7 +103,7 @@ const SVGComponent = () => (
 
 const CarouselSection: React.FC = () => {
   return (
-    <div className="relative h-[803px] hidden md:block" id="trust">
+    <div className="relative h-[803px] hidden md:block " id="trust">
       <SVGComponent />
       <div className="absolute top-0 z-100 max-w-[1440px]">
         {/* Rectangle 46 */}

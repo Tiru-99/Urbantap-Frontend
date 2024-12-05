@@ -1,8 +1,8 @@
-import AppButton from "./AppButton";
+import AppStoreButtons from "./AppStoreButtons";
 
 interface BackgroundSvgProps extends React.SVGProps<SVGSVGElement> {}
 
-const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
+export const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
   <svg
     width={1258}
     height={557}
@@ -96,9 +96,9 @@ const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
 
 const DownloadsSection = () => {
   return (
-    <div className="relative h-[805px] w-[1440px] bg-white hidden md:block" id="app">
+    <div className="relative h-[805px] w-full bg-white hidden md:block" id="app">
       <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[270px] left-[200px] gap-[30px]">
-        <h1 className="text-black font-inter font-medium text-[67px] leading-[71px]">
+        <h1 className="text-black font-inter font-semibold tracking-tight text-[67px] leading-[71px]">
           Its time to level up your game
           <span className="text-[#0ECC88]">
           {" "}
@@ -106,16 +106,17 @@ const DownloadsSection = () => {
         </span>
         </h1>
 
-        <p className="text-[#00000099] font-sans text-base font-normal leading-[25.6px]">
+        <p className="text-[#00000099] font-sans text-base font-bold leading-[25.6px]">
           Download Urbantap on your phone now!
         </p>
 
         <div className="flex flex-row gap-4">
           {/* <AppButton title="App Store" subtitle="Download on the" />
           <AppButton  title="Play Store" subtitle="Get it on" /> */}
-          <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
+          {/* <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
             Join the waitlist
-          </button>
+          </button> */}
+          <AppStoreButtons/>
         </div>
       </div>
       <div className="w-full h-full flex items-center justify-center">

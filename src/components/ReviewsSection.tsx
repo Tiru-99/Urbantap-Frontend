@@ -1,70 +1,112 @@
 "use client";
+
+import React from "react";
 import ImageAnimations from "./ReviewsImages";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const reviews = [
+  {
+    text: "The NFC-powered app has transformed how I connect with industry professionals in Dubai—effortless contact sharing and a major boost in productivity.",
+    highlight: "An essential tool for every real estate professional!",
+    name: "Abdul Mohammed Bari",
+    position: "Broker at AMS Real Estate"
+  },
+  {
+    text: "This innovative app has revolutionized my networking approach in the Dubai real estate market. It's incredibly efficient and user-friendly.",
+    highlight: "A game-changer for real estate networking!",
+    name: "Sarah Al-Maktoum",
+    position: "Senior Property Consultant"
+  },
+  {
+    text: "The seamless integration of NFC technology has significantly improved my ability to connect with clients and partners in the UAE property sector.",
+    highlight: "Highly recommended for all real estate professionals!",
+    name: "Ahmed Hassan",
+    position: "Real Estate Investment Advisor"
+  }
+];
+
 const ReviewsSection: React.FC = () => {
   return (
     <>
-      <div className=" hidden md:block section-width relative">
-        <AwesomeSlider className="section-width">
-          <div className="relative w-[1440px] h-[850px] bg-white hidden md:block">
-            <div className="absolute w-[898px] h-[240px] left-[270px] top-[calc(50%-120px-25px)] text-center text-black text-[40px] font-medium leading-[120%]">
-              The NFC-powered app has transformed how I connect with industry
-              professionals in Dubai—effortless contact sharing and a major
-              boost in productivity.
-              <span className="text-[#0ECC88]">
-                {" "}
-                An essential tool for every real estate professional!
-              </span>
-            </div>
+      <div className="hidden md:block w-full relative">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {reviews.map((review, index) => (
+              <CarouselItem key={index}>
+                <div className="relative w-full h-[850px] bg-white">
+                  <div className="absolute w-[898px] h-[240px] left-[270px] top-[calc(50%-120px-25px)] text-center text-black text-[40px] font-medium leading-[120%]">
+                    {review.text}
+                    <span className="text-[#0ECC88]">
+                      {" "}
+                      {review.highlight}
+                    </span>
+                  </div>
 
-            <div className="absolute flex flex-col justify-center items-center w-[251px] h-[55px] left-[593px] top-[556px] gap-[10px]">
-              <div className="w-[220px] h-[25px] text-black text-[20px] font-semibold leading-[125%] flex items-end">
-                Abdul Mohammed Bari
-              </div>
-              <div className="w-[220px] h-[20px] text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%] flex items-end">
-                Broker at AMS Real Estate
-              </div>
-            </div>
-          </div>
-        </AwesomeSlider>
+                  <div className="absolute flex flex-col justify-center items-center w-[251px] left-1/2 transform -translate-x-1/2 bottom-[100px] md:mb-24 md:mr-8">
+                    <div className="text-black text-[20px] font-semibold leading-[125%] text-center">
+                      {review.name}
+                    </div>
+                    <div className="text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%]">
+                      {review.position}
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2">
+            <ChevronLeft className="h-6 w-6" />
+          </CarouselPrevious>
+          <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2">
+            <ChevronRight className="h-6 w-6" />
+          </CarouselNext>
+        </Carousel>
         <ImageAnimations />
       </div>
 
+      <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block">
+        <Carousel className="section-width">
+          <CarouselContent>
+            {reviews.map((review, index) => (
+              <CarouselItem key={index}>
+                <div className="relative w-full h-auto bg-white lg:h-[850px] px-4 py-8">
+                  {/* Review Text Section */}
+                  <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%]">
+                    <p className="text-start">
+                      "{review.text}"
+                    </p>
+                    <p className="text-[#0ECC88] mt-4 text-start">
+                      {review.highlight}
+                    </p>
+                  </div>
 
-      <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block bg-white">
-      <AwesomeSlider className="section-width">
-        
-        <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block bg-white">
-          {/* Review Text Section */}
-          <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center lg:text-left px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%]  lg:mt-0">
-            <p className="block text-start">
-              "The NFC-powered app has transformed how I connect with industry
-              professionals in Dubai—
-              effortless contact sharing and a major boost in productivity."
-            </p>
-            <p className="block text-[#0ECC88] mt-4 text-start">
-              An essential tool for every real estate professional!
-            </p>
+                  {/* Reviewer Info */}
+                  <div className="flex flex-col justify-center items-center w-full mt-8">
+                    <div className="text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-center">
+                      {review.name}
+                    </div>
+                    <div className="text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-center">
+                      {review.position}
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center space-x-4 mt-8">
+            <CarouselPrevious className="relative inset-0 translate-y-0">
+              <ChevronLeft className="h-6 w-6" />
+            </CarouselPrevious>
+            <CarouselNext className="relative inset-0 translate-y-0">
+              <ChevronRight className="h-6 w-6" />
+            </CarouselNext>
           </div>
-
-          {/* Reviewer Info */}
-          <div className="flex flex-col ml-3 justify-center items-center w-full h-auto lg:w-[251px] lg:h-[55px] mx-auto mt-10 lg:mt-0">
-            <div className="w-full lg:w-[220px] text-start text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-center lg:text-left">
-              Abdul Mohammed Bari
-            </div>
-            <div className="w-full ml-2 text-start ms-5 lg:w-[220px] text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-center lg:text-left">
-              Broker at AMS Real Estate
-            </div>
-          </div>
-
-          {/* Image animations */}
-          {/* <ImageAnimations /> */}
-        </div>
-        </AwesomeSlider>
+        </Carousel>
       </div>
     </>
   );
 };
 
 export default ReviewsSection;
+
