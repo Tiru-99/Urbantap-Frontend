@@ -28,49 +28,50 @@ const reviews = [
 
 const ReviewsSection: React.FC = () => {
   return (
-    <>
-      <div className="hidden md:block w-full relative">
-        <Carousel className="w-full">
-          <CarouselContent>
-            {reviews.map((review, index) => (
-              <CarouselItem key={index}>
-                <div className="relative w-full h-[850px] bg-white">
-                  <div className="absolute w-[898px] h-[240px] left-[270px] top-[calc(50%-120px-25px)] text-center text-black text-[40px] font-medium leading-[120%]">
-                    {review.text}
-                    <span className="text-[#0ECC88]">
-                      {" "}
-                      {review.highlight}
-                    </span>
-                  </div>
+    <div className="md:flex md:justify-center md:items-center w-full min-h-screen">
+      <div className="hidden md:block w-full max-w-[1440px] relative">
+        <ImageAnimations>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {reviews.map((review, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative w-full h-[850px] bg-white flex flex-col justify-center items-center">
+                    <div className="w-[898px] h-[240px] text-center text-black text-[40px] font-medium leading-[120%]">
+                      {review.text}
+                      <span className="text-[#0ECC88]">
+                        {" "}
+                        {review.highlight}
+                      </span>
+                    </div>
 
-                  <div className="absolute flex flex-col justify-center items-center w-[251px] left-1/2 transform -translate-x-1/2 bottom-[100px] md:mb-24 md:mr-8">
-                    <div className="text-black text-[20px] font-semibold leading-[125%] text-center">
-                      {review.name}
-                    </div>
-                    <div className="text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%]">
-                      {review.position}
+                    <div className="flex flex-col justify-center items-center w-[251px] mt-8">
+                      <div className="text-black text-[20px] font-semibold leading-[125%] text-center">
+                        {review.name}
+                      </div>
+                      <div className="text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%]">
+                        {review.position}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2">
-            <ChevronLeft className="h-6 w-6" />
-          </CarouselPrevious>
-          <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <ChevronRight className="h-6 w-6" />
-          </CarouselNext>
-        </Carousel>
-        <ImageAnimations />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2">
+              <ChevronLeft className="h-6 w-6" />
+            </CarouselPrevious>
+            <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2">
+              <ChevronRight className="h-6 w-6" />
+            </CarouselNext>
+          </Carousel>
+        </ImageAnimations>
       </div>
 
-      <div className="relative w-full h-auto bg-white lg:h-[850px] md:hidden sm:block">
+      <div className="w-full max-w-[1440px] h-auto bg-white lg:h-[850px] md:hidden sm:block">
         <Carousel className="section-width">
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index}>
-                <div className="relative w-full h-auto bg-white lg:h-[850px] px-4 py-8">
+                <div className="relative w-full h-auto bg-white lg:h-[850px] px-4 py-8 flex flex-col justify-center items-center">
                   {/* Review Text Section */}
                   <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%]">
                     <p className="text-start">
@@ -104,7 +105,7 @@ const ReviewsSection: React.FC = () => {
           </div>
         </Carousel>
       </div>
-    </>
+    </div>
   );
 };
 

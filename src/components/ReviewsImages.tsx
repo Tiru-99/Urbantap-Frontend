@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
+import React from "react";
 
 const staggerDuration = 0.2;
 const initialDelay = 2;
@@ -18,9 +19,14 @@ const images = [
   { id: 10, left: "1166px", top: "794px", src: "review-10.png" },
 ];
 
-const ImageAnimations = () => {
+interface ImageAnimationsProps {
+  children: React.ReactNode;
+}
+
+const ImageAnimations: React.FC<ImageAnimationsProps> = ({ children }) => {
   return (
-    <>
+    <div className="relative w-full h-[900px]">
+      {children}
       {images.map((image, index) => (
         <motion.div
           key={image.id}
@@ -38,8 +44,9 @@ const ImageAnimations = () => {
           }}
         ></motion.div>
       ))}
-    </>
+    </div>
   );
 };
 
-export default ImageAnimations
+export default ImageAnimations;
+
