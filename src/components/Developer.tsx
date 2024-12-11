@@ -21,10 +21,7 @@ const Developer = () => {
           <p className="text-black text-lg font-semibold">HIVE</p>
         </div>
 
-        {/* Box 3 - Last box in first row (half visible) */}
-        {/* <div className="bg-white rounded-xl shadow-md p-4 w-1/2 h-20 flex items-center overflow-x-hidden justify-center -mr-20">
-          <p className="text-black text-lg font-semibold">DAM</p>
-        </div> */}
+       
       </div>
 
       {/* Second Row */}

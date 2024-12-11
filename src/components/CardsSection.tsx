@@ -143,7 +143,7 @@ const CardsSection: React.FC = () => {
                 </p>
               </div>
               <div className="w-full sm:w-1/2 card-img scale-95 relative">
-                <div className="absolute inset-0 pr-4  ">
+                <div className="absolute inset-0 pr-4 scale-y-105 ">
                   <Image
                     src="/assets/img/card/wall.png"
                     alt="Image"

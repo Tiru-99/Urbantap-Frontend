@@ -125,7 +125,7 @@ const DownloadSection: React.FC = () => {
             </div>
           </div>
           <div className="download-image">
-            <img src="./assets/phone.png" alt="Phone" />
+            <img src="./assets/newphone.png" alt="Phone" />
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@ const DownloadSection: React.FC = () => {
                 </div>
               </div>
               <div className="absolute top-0 right-0 h-full flex items-center scale-[153%]">
-                <img className="h-full w-auto object-contain" src="/assets/phone.png" alt="Phone" />
+                <img className="h-full w-auto object-contain" src="/assets/newphone.png" alt="Phone" />
               </div>
             </div>
           </div>

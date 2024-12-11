@@ -26,7 +26,7 @@ const companiesBottom = [
   { name: "Advice", logo: "/assets/logos/advice.png" },
   { name: "Kaye & Co", logo: "/assets/logos/kaye.png" },
   { name: "Provident", logo: "/assets/logos/provident.png" },
-  { name: "Dejavu", logo: "/assets/logos/dejavuu.png" },
+  { name: "Dejavu", logo: "/assets/logos/dejavu.png" },
   { name: "Luxliving", logo: "/assets/logos/luxliving.png" },
   { name: "Texture", logo: "/assets/logos/texture.png" },
 ]

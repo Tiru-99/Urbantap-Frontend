@@ -15,7 +15,7 @@ export default function Hero() {
             }}
           >
             <div className="absolute flex flex-col items-start w-[570px] h-[402px] top-[270px] left-[80px] gap-[40px]">
-              <h1 className="text-black font-inter font-semibold tracking-tight text-[63px] leading-[71px]">
+              <h1 className="text-black font-inter font-semibold tracking-tight text-[69px] leading-[71px]">
                 One platform for the real estate ecosystem
                 <span className="text-[#0ECC88]">.</span>
               </h1>
