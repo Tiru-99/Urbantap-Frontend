@@ -137,7 +137,7 @@ const CardsSection: React.FC = () => {
 
             <div className="bg-[#F8F9FC] rounded-lg border overflow-hidden flex flex-col sm:flex-row items-stretch card-gray">
               <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold mb-2 md:px-4">Expanded Reach </h2>
+                <h2 className="text-2xl font-semibold mb-2 md:px-4">Expanded Reach </h2>
                 <p className="text-gray-600 text-lg md:px-4">
                  Brand Awareness for Developers and their projects.
                 </p>
