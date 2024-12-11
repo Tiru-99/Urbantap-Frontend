@@ -56,7 +56,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A0B1A] text-white px-6 py-8 md:px-12 md:py-6">
+    <footer className="bg-[#0A0B1A] text-white px-6 py-8 md:px-12 md:py-6 z-20 relative">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-8 md:space-y-0">
           {/* Logo and Copyright Section */}

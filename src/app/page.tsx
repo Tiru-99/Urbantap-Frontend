@@ -18,7 +18,7 @@ export default function Home() {
       <ReviewsSection />
      
       <DownloadsSection />
-      <Downloadapp></Downloadapp>
+      {/* <Downloadapp></Downloadapp> */}
       
     </>
   );

@@ -52,7 +52,7 @@ function MobileMarquee() {
             {companies.concat(companies).map((company, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-sm p-4 flex items-center justify-center mx-2 w-[140px] h-[100px] flex-shrink-0"
+                className="bg-white rounded-2xl  p-4 flex items-center justify-center mx-2 w-[140px] h-[100px] flex-shrink-0"
               >
                 <Image
                   src={company.logo}
@@ -70,7 +70,7 @@ function MobileMarquee() {
             {companies.concat(companies).map((company, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-sm p-4 flex items-center justify-center mx-2 w-[140px] h-[100px] flex-shrink-0"
+                className="bg-white rounded-2xl  p-4 flex items-center justify-center mx-2 w-[140px] h-[100px] flex-shrink-0"
               >
                 <Image
                   src={company.logo}
@@ -97,7 +97,7 @@ function DesktopMarquee() {
           {companiesTop.concat(companiesTop).map((company, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-md p-4 flex items-center justify-center mx-4 w-[200px] h-[120px] flex-shrink-0"
+              className="bg-white rounded-3xl shadow-sm p-4 flex items-center justify-center mx-4 w-[200px] h-[120px] flex-shrink-0"
             >
               <Image
                 src={company.logo}
@@ -116,7 +116,7 @@ function DesktopMarquee() {
           {companiesBottom.concat(companiesBottom).map((company, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-md  p-4 flex items-center justify-center mx-4 w-[200px] h-[120px] flex-shrink-0"
+              className="bg-white rounded-3xl shadow-sm  p-4 flex items-center justify-center mx-4 w-[200px] h-[120px] flex-shrink-0"
             >
               <Image
                 src={company.logo}

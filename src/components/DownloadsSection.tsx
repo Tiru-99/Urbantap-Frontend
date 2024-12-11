@@ -1,8 +1,9 @@
+import React from "react";
 import AppStoreButtons from "./AppStoreButtons";
 
 interface BackgroundSvgProps extends React.SVGProps<SVGSVGElement> {}
 
-export const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
+const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
   <svg
     width={1258}
     height={557}
@@ -94,39 +95,69 @@ export const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
   </svg>
 );
 
-const DownloadsSection = () => {
+const DownloadSection: React.FC = () => {
   return (
-    <div className="relative h-[805px] w-full bg-white hidden md:block" id="app">
-      <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[270px] left-[200px] gap-[30px]">
-        <h1 className="text-black font-inter font-semibold tracking-tight text-[67px] leading-[71px]">
-          Its time to level up your game
-          <span className="text-[#0ECC88]">
-          {" "}
-          .
-        </span>
-        </h1>
-
-        <p className="text-[#00000099] font-sans text-base font-bold leading-[25.6px]">
-          Download Urbantap on your phone now!
-        </p>
-
-        <div className="flex flex-row gap-4">
-          {/* <AppButton title="App Store" subtitle="Download on the" />
-          <AppButton  title="Play Store" subtitle="Get it on" /> */}
-          {/* <button className="text-white font-semibold py-2 px-5 text-[16px] mx-auto w-[164px] h-[53px] bg-black rounded-[30px]">
-            Join the waitlist
-          </button> */}
-          <AppStoreButtons/>
+    <div className="relative w-full bg-white" id="app">
+      {/* Mobile version */}
+      <div className="md:hidden">
+        <div className="download-app-section bg-white">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 p-4 bg-gradient-to-bl from-blue-100 to-green-100 inner-download">
+            {/* First Column: Title, Paragraph, and Store Logos */}
+            <div className="flex flex-col justify-center text-start p-4">
+              <h1 className="mobileapp-h1 text-black font-semibold tracking-tight">
+                Its your time to
+              </h1>
+              <h1 className="mobileapp-h1 text-black mb-4 font-bold tracking-tight">
+                level up your game.
+              </h1>
+              <div className="w-[156px]">
+                <p className="text-black mobileapp-p mb-6 text-start">
+                  Download urbantap on your phone now!
+                </p>
+              </div>
+              <div className="flex justify-center gap-4 scale-90">
+                <AppStoreButtons />
+              </div>
+            </div>
+            {/* Second Column: Background Image */}
+            <div className="relative flex justify-center items-center">
+              <div className="w-full h-full bg-cover bg-center rounded-lg"></div>
+            </div>
+          </div>
+          <div className="download-image">
+            <img src="./assets/phone.png" alt="Phone" />
+          </div>
         </div>
       </div>
-      <div className="w-full h-full flex items-center justify-center">
-        <BackgroundSvg className="w-[1258px] h-[577px]" />
-      </div>
-      <div className="absolute top-1 right-0">
-        <img className="w-auto h-[800px]" src="/assets/phone.png" />
+
+      {/* Desktop version */}
+      <div className="hidden md:block h-[805px] relative">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="relative w-[1258px] h-[577px]">
+            <BackgroundSvg className="w-full h-full" />
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[100px] left-[100px] gap-[30px]">
+                <h1 className="text-black font-inter font-semibold tracking-tight text-[67px] leading-[71px]">
+                  Its time to level up your game
+                  <span className="text-[#0ECC88]">.</span>
+                </h1>
+                <p className="text-[#00000099] font-sans text-base font-bold leading-[25.6px]">
+                  Download Urbantap on your phone now!
+                </p>
+                <div className="flex flex-row gap-4">
+                  <AppStoreButtons />
+                </div>
+              </div>
+              <div className="absolute top-0 right-0 h-full flex items-center scale-[153%]">
+                <img className="h-full w-auto object-contain" src="/assets/phone.png" alt="Phone" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default DownloadsSection;
+export default DownloadSection;
+

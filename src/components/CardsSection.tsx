@@ -131,23 +131,42 @@ const CardsSection: React.FC = () => {
           </div>
 
           {/* Second Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 card-div ">
-            <Card3
-              title="Expanded Reach"
-              desc="Brand Awareness for developers their projects"
-              img="wall"
-              img2="expand"
-            />
+
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 card-div ">        
+
+            <div className="bg-[#F8F9FC] rounded-lg border overflow-hidden flex flex-col sm:flex-row items-stretch card-gray">
+              <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
+                <h2 className="text-2xl font-bold mb-2 md:px-4">Expanded Reach </h2>
+                <p className="text-gray-600 text-lg md:px-4">
+                 Brand Awareness for Developers and their projects.
+                </p>
+              </div>
+              <div className="w-full sm:w-1/2 card-img scale-95 relative">
+                <div className="absolute inset-0 pr-4  ">
+                  <Image
+                    src="/assets/img/card/wall.png"
+                    alt="Image"
+                    width={500}
+                    height={300}
+                    className="w-full h-full object-cover rounded-r-lg"
+                  />
+                </div>
+              </div>
+            </div>
+
+
             <Card3
               title="Curated Real Estate Listings"
-              img="bhk"
+              img="lastcardpic"
               desc="A Moderated feed of real estate asks & sells available across UAE"
-              img2="cur"
             />
           </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile cards view  */}
 
       <div className="bg-white  section-width block md:hidden pb-2">
             <Card className="w-[340px] max-w-xl mx-auto bg-[#F8F9FC] h-auto rounded-3xl mb-2">

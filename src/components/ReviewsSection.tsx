@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
+import { useState, useEffect } from "react";
 import ImageAnimations from "./ReviewsImages";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const reviews = [
   {
@@ -27,11 +30,36 @@ const reviews = [
 ];
 
 const ReviewsSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalReviews = reviews.length;
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 4000, stopOnInteraction: false })]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        setActiveIndex(emblaApi.selectedScrollSnap());
+      });
+    }
+  }, [emblaApi]);
+
   return (
-    <div className="md:flex md:justify-center md:items-center w-full min-h-screen">
+    <div className="md:flex md:justify-center md:items-center w-full">
       <div className="hidden md:block w-full max-w-[1440px] relative">
         <ImageAnimations>
-          <Carousel className="w-full">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            className="w-full"
+            ref={emblaRef}
+          >
             <CarouselContent>
               {reviews.map((review, index) => (
                 <CarouselItem key={index}>
@@ -56,18 +84,30 @@ const ReviewsSection: React.FC = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2">
-              <ChevronLeft className="h-6 w-6" />
+            <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2" >
+              <ChevronLeft className="h-6 w-6"/>
             </CarouselPrevious>
-            <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2">
-              <ChevronRight className="h-6 w-6" />
+            <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2" >
+              <ChevronRight className="h-6 w-6"/>
             </CarouselNext>
           </Carousel>
         </ImageAnimations>
       </div>
 
       <div className="w-full max-w-[1440px] h-auto bg-white lg:h-[850px] md:hidden sm:block">
-        <Carousel className="section-width">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="section-width"
+          ref={emblaRef}
+        >
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index}>
@@ -99,7 +139,7 @@ const ReviewsSection: React.FC = () => {
             <CarouselPrevious className="relative inset-0 translate-y-0">
               <ChevronLeft className="h-6 w-6" />
             </CarouselPrevious>
-            <CarouselNext className="relative inset-0 translate-y-0">
+            <CarouselNext className="relative inset-0 translate-y-0" >
               <ChevronRight className="h-6 w-6" />
             </CarouselNext>
           </div>
