@@ -94,7 +94,7 @@ const ReviewsSection: React.FC = () => {
         </ImageAnimations>
       </div>
 
-      <div className="w-full max-w-[1440px] h-auto bg-white lg:h-[850px] md:hidden sm:block">
+      <div className="w-full max-w-[1440px] h-auto bg-white lg:h-[850px] md:hidden sm:block pt-10">
         <Carousel
           opts={{
             align: "start",
@@ -123,11 +123,11 @@ const ReviewsSection: React.FC = () => {
                   </div>
 
                   {/* Reviewer Info */}
-                  <div className="flex flex-col justify-center items-center w-full mt-8">
-                    <div className="text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-center">
+                  <div className="flex flex-col items-start w-full mt-8 pl-5">
+                    <div className="text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-start">
                       {review.name}
                     </div>
-                    <div className="text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-center">
+                    <div className="text-[14px] lg:text-[16px] text-[#0A1330CC] font-normal leading-[125%] text-start">
                       {review.position}
                     </div>
                   </div>
@@ -135,7 +135,7 @@ const ReviewsSection: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center space-x-4 mt-8">
+          <div className="flex justify-center space-x-4 pb-10">
             <CarouselPrevious className="relative inset-0 translate-y-0">
               <ChevronLeft className="h-6 w-6" />
             </CarouselPrevious>

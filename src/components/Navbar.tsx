@@ -2,8 +2,8 @@ import UrbantapLogo from "@/assets/logo";
 
 function Navbar() {
   return (
-    <header className="w-full flex justify-center absolute top-[30px] z-10 md:px-12">
-      <nav className="w-full max-w-[1360px] h-[80px] bg-white py-10 px-5 md:px-8  shadow-sm rounded-[80px] flex justify-between items-center">
+    <header className="w-full flex justify-center absolute -translate-x-3 sm:-translate-x-0 top-[30px] z-10 md:px-12">
+      <nav className="w-full max-w-[1360px] h-[80px] bg-white py-10 px-5 md:px-8 shadow-sm rounded-[80px] flex justify-between items-center">
         <div className="scale-75 -ml-4 sm:scale-100 sm:ml-0">
           <UrbantapLogo />
         </div>

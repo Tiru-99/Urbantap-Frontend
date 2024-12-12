@@ -168,8 +168,8 @@ const CardsSection: React.FC = () => {
 
       {/* Mobile cards view  */}
 
-      <div className="bg-white  section-width block md:hidden pb-2">
-            <Card className="w-[340px] max-w-xl mx-auto bg-[#F8F9FC] h-auto rounded-3xl mb-2">
+      <div className="bg-white  section-width block md:hidden pb-2 ">
+            <Card className="w-[340px] max-w-xl mx-auto bg-[#F8F9FC] border-none shadow-none h-auto rounded-3xl mb-2">
               <CardContent className="flex flex-col items-center text-left p-4 space-y-4">
                 <div className="relative w-[160px] h-[320px]">
                   <Image
@@ -201,7 +201,7 @@ const CardsSection: React.FC = () => {
           desc="Job posting & Talent Acquisition"
           img="talent1"
         />
-      <Card className="w-[340px] max-w-xl mx-auto bg-[#F8F9FC] h-auto rounded-3xl mb-2">
+      <Card className="w-[340px] max-w-xl mx-auto bg-[#F8F9FC] h-auto rounded-3xl mb-2 border-none shadow-none">
           <CardContent className="flex flex-col items-center text-left p-4 space-y-4">
             {/* Image Section */}
             <div className="relative w-[160px] h-[320px]">

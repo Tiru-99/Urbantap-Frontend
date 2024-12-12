@@ -7,10 +7,10 @@ const MobileCardComponent: React.FC<{ title?: string; desc?: string; img?: strin
     img2
   })  => {
   return (
-    <div className="w-100 mobile-card h-[151px] flex gap-[10px] items-center rounded-[30px] mx-[10px]  p-4 mb-2">
+    <div className="w-100 mobile-card h-[151px] flex gap-[10px] items-center rounded-[30px] mx-[10px]  p-4 mb-2 bg-[#F8F9FC]">
 
     {/* First inner div with 80x80 dimensions, rounded and containing an image */}
-    <div className="w-[80px] h-[80px] rounded-full overflow-hidden flex items-center justify-center bg-white">
+    <div className="w-[80px] h-[80px] rounded-full overflow-hidden flex items-center justify-center bg-[#F8F9FC]">
       <img  src={`./assets/img/card/${img}.png`} alt="Small Image" className="w-[40px] h-[40px] object-cover" />
     </div>
     {/* Second inner div with text */}
