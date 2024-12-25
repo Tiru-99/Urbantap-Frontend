@@ -9,32 +9,24 @@ export default function Page() {
   const params = useParams(); 
   console.log("This is my params " , params.id);
   const propertyData = {
-    images: [
-      {
-        url: '/assets/bedroom.jpg',
-        alt: 'Modern bedroom with sea view',
-      },
-      {
-        url: '/assets/bedroom.jpg',
-        alt: 'Living room',
-      },
-    ],
-    title: 'Selling Ready to move in',
-    description: '4BR Size: 235 sqm Partial sea view / corner unit with big terrace',
-    price: 'AED 12,000,000',
-    askingPrice: '19.6M',
+    images: ['/assets/bedroom.jpg', '/assets/bedroom.jpg'],
+    title: 'Is Renting',
+    rent: 'AED 12,000,000',
+    location: 'Sharjah',
     details: {
-      bedrooms: '4+',
-      bathrooms: '3+',
-      size: '3700 sq.ft',
-      city: 'Sharjah',
-      furnishing: 'Furnished',
+      bedrooms: 4,
+      bathrooms: "3+",
+      size: "3700 sq ft"
     },
     moreDetails: {
       type: 'Apartment',
       projectName: '4BR Size: 235 sqm Partial sea view / corner unit with big terrace',
       rentFrequency: 'Monthly',
-      propertySize: '3700',
+      noOfBedrooms: 4,
+      noOfBathrooms: '3+ Bathroom',
+      furnishing: 'Furnished',
+      propertySize: '3,700 sq.ft',
+      city: 'Sharjah'
     },
     amenities: [
       'Pets Allowed',
@@ -49,9 +41,10 @@ export default function Page() {
       'Jacuzzi',
     ],
     broker: {
-      initials: 'EM',
       name: 'Eliza Michell',
-    },
+      avatar: 'EM',
+      postedTime: '1 month ago'
+    }
   }
 
   return (

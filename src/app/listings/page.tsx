@@ -1,10 +1,9 @@
-'use client'
 
-import { MapPin, Phone, Share2, Send, Home, Users2, Briefcase, User } from 'lucide-react'
-import { Card } from "@/components/ui/card"
+import { MapPin, Home, Bath , Square} from 'lucide-react'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import FixedNavbar from '@/components/FixedNavbar'
 
 
 interface Listing {
@@ -134,245 +133,114 @@ const sampleListings: Listing[] = [
       area: '500 sq ft',
     },
     postedAt: '2 weeks ago',
-  },
-  {
-    id: '7',
-    user: {
-      name: 'Ali',
-      avatar: 'A',
-    },
-    title: 'Beachside Cottage',
-    description: '3 Bedrooms with stunning sea views',
-    images: ['/assets/bedroom.jpg'],
-    price: 'AED 15,000,000',
-    location: '345 Ocean Drive',
-    details: {
-      bedrooms: 3,
-      bathrooms: 3,
-      area: '3000 sq ft',
-    },
-    postedAt: '4 days ago',
-  },
-  {
-    id: '8',
-    user: {
-      name: 'Priya',
-      avatar: 'P',
-    },
-    title: 'City Loft',
-    description: '1 Bedroom with modern amenities',
-    images: ['/assets/bedroom.jpg'],
-    price: 'AED 2,000,000',
-    location: '789 Urban Street',
-    details: {
-      bedrooms: 1,
-      bathrooms: 1,
-      area: '800 sq ft',
-    },
-    postedAt: '1 week ago',
-  },
-  {
-    id: '9',
-    user: {
-      name: 'Samir',
-      avatar: 'S',
-    },
-    title: 'Mountain Retreat',
-    description: '4 Bedrooms surrounded by nature',
-    images: ['/assets/bedroom.jpg'],
-    price: 'AED 20,000,000',
-    location: '987 Highland Road',
-    details: {
-      bedrooms: 4,
-      bathrooms: 4,
-      area: '3500 sq ft',
-    },
-    postedAt: '10 days ago',
-  },
-  {
-    id: '10',
-    user: {
-      name: 'Lila',
-      avatar: 'L',
-    },
-    title: 'Countryside Farmhouse',
-    description: '5 Bedrooms with large gardens',
-    images: ['/assets/bedroom.jpg'],
-    price: 'AED 18,000,000',
-    location: '654 Country Lane',
-    details: {
-      bedrooms: 5,
-      bathrooms: 4,
-      area: '4000 sq ft',
-    },
-    postedAt: '2 weeks ago',
-  },
+  }
 ]
 
 export default function PropertyListings() {
     //const [showDownloadPrompt, setShowDownloadPrompt] = useState(false)
     return (
-      <div className="container mx-auto px-4 py-6 max-w-5xl">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-medium">Looking or Selling..</h1>
-          <Button variant="default" className="rounded-full">
-            + Post a listing
-          </Button>
-        </div>
-  
-        {/* Listings */}
-        <div className="space-y-4">
-          {sampleListings.map((listing, index) => (
-            <Card 
-              key={listing.id} 
-              className={cn(
-                "overflow-hidden",
-                index === 9 && "relative"
-              )}
-            >
-              {index === 9 && (
-                <div className="absolute inset-0 z-10 backdrop-blur-sm bg-background/80 flex flex-col items-center justify-center p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">Want to see more listings?</h3>
-                  <p className="text-muted-foreground mb-4">Download our app to explore all available properties</p>
-                  <Button className="w-full max-w-sm">
-                    Download App
-                  </Button>
-                </div>
-              )}
-              {/* Mobile Layout */}
-              <div className="md:hidden">
-                <div className="p-4">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Avatar className="h-10 w-10">
-                      <AvatarFallback>{listing.user.avatar}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <h3 className="font-semibold">{listing.user.name}</h3>
-                      <p className="text-sm text-muted-foreground">{listing.postedAt}</p>
-                    </div>
-                  </div>
-                  <h2 className="text-xl font-semibold mb-1">{listing.title}</h2>
-                  <p className="text-muted-foreground mb-4">{listing.description}</p>
-                </div>
-  
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src={listing.images[0]}
-                    alt={listing.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-  
-                <div className="p-4">
-                  <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                    <p className="text-xl font-bold mb-2">Budget: {listing.price}</p>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-muted-foreground">{listing.location}</span>
-                    </div>
-                  </div>
-  
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="flex items-center gap-2 justify-center">
-                      <span className="text-base">{listing.details.bedrooms} BHK</span>
-                    </div>
-                    <div className="flex items-center gap-2 justify-center">
-                      <span className="text-base">{listing.details.bathrooms} Bath</span>
-                    </div>
-                    <div className="flex items-center gap-2 justify-center">
-                      <span className="text-base">{listing.details.area}</span>
-                    </div>
-                  </div>
-  
-                  <div className="grid grid-cols-3 gap-2">
-                    <Button variant="outline" className="w-full">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call
-                    </Button>
-                    <Button variant="outline" className="w-full">
-                      <Send className="w-4 h-4 mr-2" />
-                      Inquire
-                    </Button>
-                    <Button variant="outline" className="w-full">
-                      <Share2 className="w-4 h-4 mr-2" />
-                      Share
-                    </Button>
-                  </div>
-                </div>
-              </div>
-  
-              {/* Desktop Layout */}
-              <div className="hidden md:grid md:grid-cols-[2fr,3fr] gap-4">
-                <div className="relative aspect-[4/3]">
-                  <img
-                    src={listing.images[0]}
-                    alt={listing.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-  
-                <div className="p-4 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarFallback>{listing.user.avatar}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <h3 className="font-semibold">{listing.user.name}</h3>
-                        <p className="text-sm text-muted-foreground">{listing.postedAt}</p>
-                      </div>
-                    </div>
-                    {/* <Button variant="outline" size="sm">
-                      <Share2 className="w-4 h-4" />
-                    </Button> */}
-                  </div>
-  
-                  <div className="space-y-3">
-                    <div>
-                      <h2 className="text-xl font-semibold mb-2">{listing.title}</h2>
-                      <p className="text-muted-foreground">{listing.description}</p>
-                    </div>
-  
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-muted-foreground" />
-                      <span className="text-muted-foreground">{listing.location}</span>
-                    </div>
-  
-                    <div className="bg-primary/5 p-4 rounded-lg">
-                      <p className="text-xl font-bold">Budget: {listing.price}</p>
-                    </div>
-  
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center p-3 bg-secondary/20 rounded-lg">
-                        <p className="font-semibold">{listing.details.bedrooms} BHK</p>
-                      </div>
-                      <div className="text-center p-3 bg-secondary/20 rounded-lg">
-                        <p className="font-semibold">{listing.details.bathrooms} Bath</p>
-                      </div>
-                      <div className="text-center p-3 bg-secondary/20 rounded-lg">
-                        <p className="font-semibold">{listing.details.area}</p>
-                      </div>
-                    </div>
-  
-                    <div className="grid grid-cols-2 gap-3">
-                      <Button className="w-full">
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call Now
-                      </Button>
-                      <Button variant="outline" className="w-full">
-                        <Send className="w-4 h-4 mr-2" />
-                        Inquire
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-  
+      <>
+      <FixedNavbar></FixedNavbar>
+      <div className="container mx-auto px-4 py-6 max-w-5xl bg-white">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-xl font-medium">Looking or Selling..</h1>
+        <Button variant="default" className="rounded-full">
+          + Post a listing
+        </Button>
       </div>
+
+      {/* Listings */}
+      <div className="space-y-8">
+        {sampleListings.map((listing, index) => (
+          <div 
+            key={listing.id} 
+            className={cn(
+              "max-w-3xl mx-auto",
+              index === 5 && "relative"
+            )}
+          >
+            {index === 5 && (
+              <div className="absolute inset-0 z-10 backdrop-blur-sm bg-background/80 flex flex-col items-center justify-center p-6 text-center">
+                <h3 className="text-xl font-semibold mb-2">Want to see more listings?</h3>
+                <p className="text-muted-foreground mb-4">Download our app to explore all available properties</p>
+                <Button className="w-full max-w-sm">
+                  Download App
+                </Button>
+              </div>
+            )}
+            
+            <div className="flex justify-between px-4 mt-20">
+              <div className="flex gap-2">
+                <Avatar className="w-16 h-16">
+                  <AvatarFallback>{listing.user.avatar}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col gap-0 pt-2">
+                  <h3 className="font-bold">{listing.user.name}</h3>
+                  <p className="text-gray-500">Black Brokers</p>
+                </div>
+              </div>
+              <p className="text-gray-500">1 month ago</p>
+            </div>
+
+            <h2 className="font-bold pt-3 text-2xl px-4">{listing.title}</h2>
+            <h3 className="font-light pt-2 truncate px-4">{listing.description}</h3>
+
+            <div className="aspect-video w-full h-[25rem] mt-2">
+              <img 
+                src={listing.images[0]}
+                alt={listing.title}
+                className="object-cover h-full w-full"
+              />
+            </div>
+
+            <div className="w-full bg-green-50 rounded-b-xl flex flex-col gap-3">
+              <p className="font-extrabold text-2xl pt-3 pl-4">Budget: {listing.price}</p>
+              <div className="flex justify-start gap-1 pl-4 pb-3">
+                <MapPin className="w-5 h-5" />
+                <p className="text-gray-600">{listing.location}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 px-4 sm:px-10">
+              {/* Property Features */}
+              <div className="flex items-center justify-between border-b py-3">
+                <div className="flex items-center gap-2 text-lg">
+                  <Home className="h-5 w-5 text-muted-foreground" />
+                  <span>{listing.details.bedrooms} BHK</span>
+                </div>
+                <div className="flex items-center gap-2 text-lg">
+                  <Bath className="h-5 w-5 text-muted-foreground" />
+                  <span>{listing.details.bathrooms} Bath</span>
+                </div>
+                <div className="flex items-center gap-2 text-lg">
+                  <Square className="h-5 w-5 text-muted-foreground" />
+                  <span>{listing.details.area}</span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center justify-between gap-4 pt-3">
+                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
+                  <img className="h-5 w-5" src="/assets/call-calling.png" alt="Call icon" />
+                  Call
+                </Button>
+                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
+                  <img className="h-5 w-5" src="/assets/send-2.png" alt="Enquire icon" />
+                  Enquire
+                </Button>
+                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
+                  <img className="h-5 w-5" src="/assets/Share.png" alt="Share icon" />
+                  Share
+                </Button>
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
     )
   }
   

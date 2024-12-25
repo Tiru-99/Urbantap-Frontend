@@ -1,290 +1,199 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Share2, Bed, Bath, Maximize, Star, Heart, Check, MapPin, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-
-interface PropertyImage {
-  url: string
-  alt: string
-}
+import { ChevronLeft, Share2, Phone, MessageSquare, MapPin } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import Link from 'next/link'
 
 interface PropertyDetailsProps {
-  images: PropertyImage[]
+  images: string[]
   title: string
-  description: string
-  price: string
-  askingPrice: string
+  rent: string
+  location: string
   details: {
-    bedrooms: string
+    bedrooms: number
     bathrooms: string
     size: string
-    city: string
-    furnishing: string
   }
   moreDetails: {
     type: string
     projectName: string
     rentFrequency: string
+    noOfBedrooms: number
+    noOfBathrooms: string
+    furnishing: string
     propertySize: string
+    city: string
   }
   amenities: string[]
   broker: {
-    initials: string
     name: string
+    avatar: string
+    postedTime: string
   }
 }
 
-export default function Property({
+export default function PropertyDetails({
   images,
-  title,
-  description,
-  price,
-  askingPrice,
-  details,
-  moreDetails,
-  amenities,
-  broker,
+  title = "Is Renting",
+  rent = "AED 20,000",
+  location = "Sidra Villas II, Dubai Hills Estate, Dubai",
+  details = {
+    bedrooms: 2,
+    bathrooms: "2",
+    size: "1000+ sq ft"
+  },
+  moreDetails = {
+    type: "Apartment",
+    projectName: "Zada Tower",
+    rentFrequency: "Monthly",
+    noOfBedrooms: 3,
+    noOfBathrooms: "1-3 Bathroom",
+    furnishing: "Furnished",
+    propertySize: "1,200 sq.ft",
+    city: "Dubai"
+  },
+  amenities = [
+    "Storage Kitchen & Chimney",
+    "Barbecue Area",
+    "Double Glazed Windows"
+  ],
+  broker = {
+    name: "Omar faizan",
+    avatar: "OF",
+    postedTime: "1 month ago"
+  }
 }: PropertyDetailsProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="flex flex-col gap-6 mb-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-semibold">{title}</h1>
-              <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  <span>{details.city}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  <span>4.9 (120 reviews)</span>
-                </div>
+      {/* Header */}
+      <div className="sticky top-0 z-10 bg-background border-b">
+        <div className="px-4 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link href="/listings">
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <ChevronLeft className="h-5 w-5" />
+                <span className="sr-only">Back</span>
+              </Button>
+            </Link>
+            <h1 className="text-base font-semibold">Post details</h1>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <Share2 className="h-5 w-5" />
+            <span className="sr-only">Share</span>
+          </Button>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="pb-20">
+        {/* Property Image */}
+        <div className="aspect-[4/3] relative bg-muted">
+          <img
+            src={images?.[0] || "/placeholder.svg?height=400&width=600"}
+            alt="Property"
+            className="object-cover w-full h-full"
+          />
+        </div>
+
+        {/* Property Details */}
+        <div className="p-4 space-y-6">
+          <div>
+            <h2 className="text-lg font-semibold mb-1">{title}</h2>
+            <p className="text-sm text-muted-foreground mb-4">Property in Dubai hill for an esteemed client that is looking for high yield investment for lon ter...</p>
+            <div className="bg-blue-50 rounded-lg p-4">
+              <p className="text-lg font-semibold">Rent: {rent}</p>
+              <div className="flex items-center gap-2 mt-2 text-muted-foreground">
+                <MapPin className="h-4 w-4" />
+                <span className="text-sm">{location}</span>
               </div>
             </div>
-            <div className="mt-4 md:mt-0">
-              <Badge variant="secondary" className="text-lg font-semibold py-1 px-3">
-                {price}
-              </Badge>
+          </div>
+
+          {/* Key Features */}
+          <div className="grid grid-cols-3 gap-4 py-2">
+            <div className="text-center">
+              <p className="text-sm">{details.bedrooms} BHK</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm">{details.bathrooms} Bathroom</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm">{details.size}</p>
+            </div>
+          </div>
+
+          {/* More Details */}
+          <div className="space-y-4">
+            <h3 className="font-semibold">More details</h3>
+            <div className="grid grid-cols-2 gap-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground">Type</p>
+                <p className="text-sm">{moreDetails.type}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Project name</p>
+                <p className="text-sm">{moreDetails.projectName}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Rent frequency</p>
+                <p className="text-sm">{moreDetails.rentFrequency}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">No of Bedrooms</p>
+                <p className="text-sm">{moreDetails.noOfBedrooms}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">No of Bathrooms</p>
+                <p className="text-sm">{moreDetails.noOfBathrooms}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Furnishing</p>
+                <p className="text-sm">{moreDetails.furnishing}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Property size (sq.ft)</p>
+                <p className="text-sm">{moreDetails.propertySize}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">City</p>
+                <p className="text-sm">{moreDetails.city}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Amenities */}
+          <div className="space-y-4">
+            <h3 className="font-semibold">Amenities</h3>
+            <ul className="space-y-2">
+              {amenities.map((amenity, index) => (
+                <li key={index} className="text-sm">• {amenity}</li>
+              ))}
+            </ul>
+            <Button variant="outline" className="w-full text-sm">
+              Show All Amenities
+            </Button>
+          </div>
+
+          {/* Broker Details */}
+          <div className="space-y-4">
+            <h3 className="font-semibold">Broker details</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-10 w-10">
+                  <AvatarFallback>{broker.avatar}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-medium text-sm">{broker.name}</p>
+                  <p className="text-sm text-muted-foreground">{broker.postedTime}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Image Gallery */}
-        <Card className="mb-8 overflow-hidden">
-          <CardContent className="p-0 relative">
-            <div className="aspect-[16/9] relative">
-              <Image
-                src={images[currentImageIndex].url}
-                alt={images[currentImageIndex].alt}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-20" />
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-1/2 left-4 -translate-y-1/2 bg-white text-black hover:bg-white hover:text-primary"
-                onClick={prevImage}
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-1/2 right-4 -translate-y-1/2 bg-white text-black hover:bg-white hover:text-primary"
-                onClick={nextImage}
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm">
-                {currentImageIndex + 1} / {images.length}
-              </div>
-            </div>
-            <div className="absolute top-4 left-4 flex gap-2">
-              {images.slice(0, 5).map((_, index) => (
-                <div
-                  key={index}
-                  className={`w-2 h-2 rounded-full ${
-                    index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                  }`}
-                />
-              ))}
-              {images.length > 5 && (
-                <div className="w-2 h-2 rounded-full bg-white/50" />
-              )}
-            </div>
-
-            {/* Dialog Box */}
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="absolute md:bottom-4 md:right-4 bottom-3 right-3 scale-90 md:scale-100"
-                >
-                  Show all photos
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-7xl w-full h-[90vh]">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 overflow-y-auto p-6">
-                  {images.map((image, index) => (
-                    <div key={index} className="relative aspect-video">
-                      <Image
-                        src={image.url}
-                        alt={image.alt}
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </DialogContent>
-            </Dialog>
-          </CardContent>
-        </Card>
-
-     {/* Main Content */}
-     <Card>
-          <CardContent className="p-6">
-            <div className="space-y-6">
-              {/* Title and Price */}
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <p className="text-lg font-medium">Budget: {price}</p>
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">Asking Price: {askingPrice}</p>
-              </div>
-
-              {/* Key Details */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="flex items-center gap-2">
-                  <Bed className="h-5 w-5 text-muted-foreground" />
-                  <span>{details.bedrooms}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Bath className="h-5 w-5 text-muted-foreground" />
-                  <span>{details.bathrooms}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Maximize className="h-5 w-5 text-muted-foreground" />
-                  <span>{details.size}</span>
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* More Details */}
-              <div className="space-y-4">
-                <h3 className="font-semibold">More Details</h3>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Type</p>
-                    <p>{moreDetails.type}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Project name</p>
-                    <p>{moreDetails.projectName}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Rent frequency</p>
-                    <p>{moreDetails.rentFrequency}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">No of Bedrooms</p>
-                    <p>{details.bedrooms}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">No of Bathrooms</p>
-                    <p>{details.bathrooms}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Furnishing</p>
-                    <p>{details.furnishing}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Property size (sq.ft)</p>
-                    <p>{moreDetails.propertySize}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">City</p>
-                    <p>{details.city}</p>
-                  </div>
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* Property Details */}
-              <div className="space-y-4">
-                <h3 className="font-semibold">Property Details</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">City</p>
-                    <p>{details.city}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Furnishing</p>
-                    <p>{details.furnishing}</p>
-                  </div>
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* Amenities */}
-              <div className="space-y-4">
-                <h3 className="font-semibold">Amenities</h3>
-                <div className="flex flex-wrap gap-2">
-                  {amenities.map((amenity, index) => (
-                    <Badge key={index} variant="secondary">
-                      {amenity}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* Broker Details */}
-              <div className="space-y-4">
-                <h3 className="font-semibold">Broker Details</h3>
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
-                    {broker.initials}
-                  </div>
-                  <div>
-                    <p className="font-medium">{broker.name}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        </div>
-        </div>
-
+    </div>
   )
 }
 
