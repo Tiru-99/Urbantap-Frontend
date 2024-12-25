@@ -372,30 +372,6 @@ export default function PropertyListings() {
           ))}
         </div>
   
-        {/* Mobile Navigation */}
-        <div className="fixed bottom-0 left-0 right-0 bg-background border-t md:hidden">
-          <div className="flex justify-around items-center p-3">
-            <Button variant="ghost" className="flex flex-col items-center gap-1">
-              <Home className="w-5 h-5" />
-              <span className="text-xs">Home</span>
-            </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-1">
-              <Users2 className="w-5 h-5" />
-              <span className="text-xs">Brokers</span>
-            </Button>
-            <Button variant="default" className="rounded-full w-12 h-12 flex items-center justify-center">
-              <Send className="w-6 h-6" />
-            </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-1">
-              <Briefcase className="w-5 h-5" />
-              <span className="text-xs">Jobs</span>
-            </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-1">
-              <User className="w-5 h-5" />
-              <span className="text-xs">Profile</span>
-            </Button>
-          </div>
-        </div>
       </div>
     )
   }
