@@ -5,6 +5,9 @@ import ReviewsSection from "@/components/ReviewsSection";
 import TrustedBySection from "@/components/TrustedBySection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AboutUs from "@/components/AboutUs";
+import WhyChooseUs from "@/components/WhyChooseUs";
+
 
 
 export default function Home() {
@@ -13,11 +16,10 @@ export default function Home() {
       <Navbar/>
       <Hero />
       <CardsSection />
-      {/* <CarouselSection /> */}
-      {/* <Developer/> */}
       <TrustedBySection/>
+      <WhyChooseUs/>
       <ReviewsSection />
-     
+      <AboutUs/>
       <DownloadsSection />
       <Footer/>
       {/* <Downloadapp></Downloadapp> */}

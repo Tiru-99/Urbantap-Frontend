@@ -46,7 +46,7 @@ function MobileMarquee() {
       </div>
 
       {/* Marquee Animation */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4"  id='trusted-by'>
         <div className="flex overflow-hidden">
           <div className="flex animate-marquee-mobile">
             {companies.concat(companies).map((company, index) => (

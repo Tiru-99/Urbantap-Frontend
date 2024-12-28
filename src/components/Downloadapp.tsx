@@ -3,7 +3,7 @@ import AppStoreButtons from "./AppStoreButtons";
 
 const Downloadapp = () => {
   return (
-    <div className="download-app-section bg-white  md:hidden sm:block">
+    <div className="download-app-section bg-white  md:hidden sm:block" id="download">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 p-4 bg-gradient-to-bl from-blue-100 to-green-100 inner-download">
         {/* First Column: Title, Paragraph, and Store Logos */}
         <div className="flex flex-col justify-center  text-start p-4 ">

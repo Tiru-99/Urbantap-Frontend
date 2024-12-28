@@ -194,7 +194,7 @@ export default function PropertyListings() {
               />
             </div>
 
-            <div className="w-full bg-green-50 rounded-b-xl flex flex-col gap-3">
+            <div className="w-full bg-blue-50 rounded-b-xl flex flex-col gap-3">
               <p className="font-extrabold text-2xl pt-3 pl-4">Budget: {listing.price}</p>
               <div className="flex justify-start gap-1 pl-4 pb-3">
                 <MapPin className="w-5 h-5" />

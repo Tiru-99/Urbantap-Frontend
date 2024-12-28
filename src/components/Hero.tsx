@@ -1,5 +1,9 @@
-
+import { Inter } from "next/font/google";
 import AppStoreButtons from "./AppStoreButtons";
+
+
+const inter = Inter({ subsets: ['latin'] });
+
 
 export default function Hero() {
   return (
@@ -15,7 +19,7 @@ export default function Hero() {
             }}
           >
             <div className="absolute flex flex-col items-start w-[570px] h-[402px] top-[270px] left-[80px] gap-[40px]">
-              <h1 className="text-black font-inter font-semibold tracking-tight text-[69px] leading-[71px]">
+            <h1 className={`text-gray-800 font-inter font-semibold tracking-normal text-[69px] leading-[71px] ${inter.className}`}>
                 One platform for the real estate ecosystem
                 <span className="text-[#0ECC88]">.</span>
               </h1>

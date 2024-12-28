@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronLeft, Share2, Phone, MessageSquare, MapPin } from 'lucide-react'
+import { ChevronLeft, Share2, MapPin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import Link from 'next/link'
