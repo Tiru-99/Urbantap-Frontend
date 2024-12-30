@@ -65,7 +65,7 @@ export default function AboutUs() {
             </div>
 
             {/* Image Section */}
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full lg:aspect-square rounded-lg overflow-hidden mx-auto lg:mx-0 z-20 mt-8 lg:mt-0">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]  lg:aspect-square rounded-lg overflow-hidden mx-auto lg:mx-0 z-20 mt-8 lg:mt-0">
               <Image
                 src="/assets/bedroom.jpg"
                 alt="Team members collaborating"

@@ -1,13 +1,15 @@
 'use client'
-
-import { ChevronLeft, Share2, MapPin } from 'lucide-react'
+import{ useState } from 'react';
+import { ChevronLeft , ChevronRight, Circle, MapPin} from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Home, Bath , Expand , Upload , ArrowLeft} from 'lucide-react'
 import Link from 'next/link'
 
 interface PropertyDetailsProps {
   images: string[]
   title: string
+  description:string
   rent: string
   location: string
   details: {
@@ -36,6 +38,7 @@ interface PropertyDetailsProps {
 export default function PropertyDetails({
   images,
   title = "Is Renting",
+  description,
   rent = "AED 20,000",
   location = "Sidra Villas II, Dubai Hills Estate, Dubai",
   details = {
@@ -64,22 +67,31 @@ export default function PropertyDetails({
     postedTime: "1 month ago"
   }
 }: PropertyDetailsProps) {
+
+  
+  const[readMore , setReadMore] = useState<boolean>(false);
+  const[showAmmenities , setShowAmmenities] = useState<boolean>(false);
+  const[carouselIndex , setCarouselIndex] = useState<number>(0);
+ 
+
+
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-10 bg-background border-b">
-        <div className="px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        <div className="px-4 h-20 flex items-center justify-between ">
+          <div className="flex items-center gap-3 ">
             <Link href="/listings">
-              <Button variant="ghost" size="icon" className="h-8 w-8">
-                <ChevronLeft className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="h-12 w-12 bg-gray-50 rounded-full">
+                <ArrowLeft className="h-5 w-5" />
                 <span className="sr-only">Back</span>
               </Button>
             </Link>
             <h1 className="text-base font-semibold">Post details</h1>
           </div>
-          <Button variant="ghost" size="icon" className="h-8 w-8">
-            <Share2 className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="h-12 w-12 bg-gray-100 rounded-full">
+            <Upload className="h-5 w-5" />
             <span className="sr-only">Share</span>
           </Button>
         </div>
@@ -88,19 +100,62 @@ export default function PropertyDetails({
       {/* Main Content */}
       <div className="pb-20">
         {/* Property Image */}
-        <div className="aspect-[4/3] relative bg-muted">
-          <img
-            src={images?.[0] || "/placeholder.svg?height=400&width=600"}
+        <div className="aspect-[4/3] bg-muted relative">
+          {carouselIndex >=0 && (<img
+            src={images[carouselIndex] || "/placeholder.svg?height=400&width=600"}
             alt="Property"
             className="object-cover w-full h-full"
-          />
+          />)}
+
+        <span className="absolute bg-white rounded-lg top-1/2 left-2 h-8 w-8 flex items-center justify-center"
+        onClick={()=>( setCarouselIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length))}>
+          <ChevronLeft className="h-4 w-4"></ChevronLeft>
+        </span>
+
+        <span className="absolute bg-white rounded-lg top-1/2 right-2 h-8 w-8 flex items-center justify-center"
+        onClick={()=>(setCarouselIndex((prevIndex)=>(prevIndex + 1) % images.length))}>
+          <ChevronRight className="h-4 w-4"></ChevronRight>
+        </span>
+
+        {/* Circles */}
+        <span className='absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1'>
+          {images?.map((_ , index)=>(
+             <Circle className='h-3 w-3'
+              onClick={()=>(setCarouselIndex(index))}
+              fill={index === carouselIndex ? "#888" : "#fff"}
+              strokeWidth={0} key={index}></Circle>
+          ))}
+        </span>
+
         </div>
 
         {/* Property Details */}
         <div className="p-4 space-y-6">
           <div>
             <h2 className="text-lg font-semibold mb-1">{title}</h2>
-            <p className="text-sm text-muted-foreground mb-4">Property in Dubai hill for an esteemed client that is looking for high yield investment for lon ter...</p>
+            
+            {/* Desktop View */}
+            <p className="text-sm text-muted-foreground mb-4 hidden md:block">
+              {readMore ? description : description.slice(0, 200)}
+              <span
+                className="text-gray-600 cursor-pointer font-bold"
+                onClick={() => setReadMore((prevState) => !prevState)}
+              >
+                {readMore ? " ...Read Less" : " ...Read More"}
+              </span>
+            </p>
+
+            {/* Mobile View , slice function parameter has been changed*/}
+            <p className="text-sm text-muted-foreground mb-4 md:hidden">
+              {readMore ? description : description.slice(0, 120) }
+              <span
+                className="text-gray-600 cursor-pointer font-bold"
+                onClick={() => setReadMore((prevState) => !prevState)}
+              >
+                {readMore ? "See Less" : "See More"}
+              </span>
+            </p>
+
             <div className="bg-blue-50 rounded-lg p-4">
               <p className="text-lg font-semibold">Rent: {rent}</p>
               <div className="flex items-center gap-2 mt-2 text-muted-foreground">
@@ -111,15 +166,18 @@ export default function PropertyDetails({
           </div>
 
           {/* Key Features */}
-          <div className="grid grid-cols-3 gap-4 py-2">
-            <div className="text-center">
+          <div className="grid grid-cols-3 gap-4 py-2 text-gray-500">
+            <div className="text-center flex justify-center items-center gap-2">
               <p className="text-sm">{details.bedrooms} BHK</p>
+              <span><Home/></span>
             </div>
-            <div className="text-center">
-              <p className="text-sm">{details.bathrooms} Bathroom</p>
+            <div className="text-center flex justify-center items-center gap-2">
+              <p className="text-sm">{details.bathrooms} Bath</p>
+              <span><Bath/></span>
             </div>
-            <div className="text-center">
+            <div className="text-center flex justify-center items-center gap-2">
               <p className="text-sm">{details.size}</p>
+              <span><Expand/></span>
             </div>
           </div>
 
@@ -166,12 +224,16 @@ export default function PropertyDetails({
           <div className="space-y-4">
             <h3 className="font-semibold">Amenities</h3>
             <ul className="space-y-2">
-              {amenities.map((amenity, index) => (
+              {showAmmenities === true ? amenities.map((amenity, index) => (
                 <li key={index} className="text-sm">• {amenity}</li>
-              ))}
+              )) : (amenities.slice(0,3).map((amenity, index) => (
+                <li key={index} className="text-sm">• {amenity}</li>
+              )))}
             </ul>
-            <Button variant="outline" className="w-full text-sm">
-              Show All Amenities
+            <Button variant="outline"
+            className="text-sm rounded-full bg-gray-100 start-0"
+            onClick={()=>(setShowAmmenities((prevState)=>(!prevState)))}>
+              {showAmmenities ? "Hide Ammenities" : "Show All Ammenities"}
             </Button>
           </div>
 

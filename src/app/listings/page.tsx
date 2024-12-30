@@ -145,9 +145,6 @@ export default function PropertyListings() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-xl font-medium">Looking or Selling..</h1>
-        <Button variant="default" className="rounded-full">
-          + Post a listing
-        </Button>
       </div>
 
       {/* Listings */}
