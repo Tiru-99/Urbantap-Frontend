@@ -97,7 +97,7 @@ const BackgroundSvg: React.FC<BackgroundSvgProps> = (props) => (
 
 const DownloadSection: React.FC = () => {
   return (
-    <div className="relative w-full bg-white" id="app">
+    <div className="relative w-full overflow-x-clip bg-white" id="app">
       {/* Mobile version */}
       <div className="md:hidden">
         <div className="download-app-section bg-white">
@@ -130,11 +130,37 @@ const DownloadSection: React.FC = () => {
         </div>
       </div>
 
+      {/* Table Section */}
+      <div className="hidden sm:block lg:hidden h-[600px] relative">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="relative w-[90%] max-w-[900px] h-[450px]">
+            <BackgroundSvg className="w-full h-full scale-y-125" />
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute flex flex-col items-start w-[300px] h-[214px] top-[60px] left-[50px] gap-[20px]">
+                <h1 className="text-black font-inter font-semibold tracking-tight text-[48px] leading-[52px]">
+                  Its time to level up your game
+                  <span className="text-[#0ECC88]">.</span>
+                </h1>
+                <p className="text-[#00000099] font-sans text-sm font-bold leading-[22px]">
+                  Download Urbantap on your phone now!
+                </p>
+                <div className="flex flex-row gap-3">
+                  <AppStoreButtons />
+                </div>
+              </div>
+              <div className="absolute top-2 -right-2 h-full flex items-center scale-[130%]">
+                <img className="h-full w-auto object-contain" src="/assets/newphone.png" alt="Phone" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Desktop version */}
-      <div className="hidden md:block h-[805px] relative">
+      <div className="hidden lg:block h-[805px] relative">
         <div className="w-full h-full flex items-center justify-center">
           <div className="relative w-[1258px] h-[577px]">
-            <BackgroundSvg className="w-full h-full" />
+            <BackgroundSvg className="w-full h-full rounded-[50px]" />
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="absolute flex flex-col items-start w-[400px] h-[214px] top-[100px] left-[100px] gap-[30px]">
                 <h1 className="text-black font-inter font-semibold tracking-tight text-[67px] leading-[71px]">

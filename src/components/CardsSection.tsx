@@ -51,7 +51,7 @@ const CardsSection: React.FC = () => {
 
             <Card className="w-full max-w-xl mx-auto bg-[#F8F9FC]  h-[520px] rounded-3xl">
                   <CardContent className="flex flex-col items-center text-left p-8 space-y-6 ">
-                    <div className="relative w-[280px] h-[450px] -mt-32">
+                    <div className="relative lg:w-[280px] lg:h-[450px] md:h-[400px] md:w-[240px] -mt-32">
                       <Image
                         src="/assets/img/card/iphone.png"
                         alt="iPhone showing Connect & Explore app interface"
@@ -61,10 +61,10 @@ const CardsSection: React.FC = () => {
                       />
                     </div>
                     <div className="w-full space-y-2">
-                      <h2 className="text-2xl font-semibold text-gray-900">
+                      <h2 className="md:text-xl lg:text-2xl font-semibold text-gray-900">
                         Connect & Explore
                       </h2>
-                      <p className="text-gray-600 text-lg">
+                      <p className="text-gray-600 md:text-md lg:text-lg">
                         Networking platform for every stakeholder in real estate
                       </p>
                     </div>
@@ -75,7 +75,7 @@ const CardsSection: React.FC = () => {
 
             <div className="col-span-1 flex flex-col gap-6">
                 <Card className="flex items-center gap-4 p-4 bg-[#F8F9FC] transition-colors cursor-pointer h-[245px] w-full rounded-3xl">
-                  <div className="relative h-full w-[200px]">
+                  <div className="relative h-full w-[200px] ">
                     <Image
                       src="/assets/img/card/talent.png"
                       alt="Broker Database icon"
@@ -85,8 +85,8 @@ const CardsSection: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-2xl text-gray-900">Broker Database</h3>
-                    <p className="text-lg text-gray-500 ">Consolidated brokers data of UAE</p>
+                    <h3 className="font-semibold md:text-xl lg:text-2xl text-gray-900">Broker Database</h3>
+                    <p className=" md:text-md lg:text-lg text-gray-500 ">Consolidated brokers data of UAE</p>
                   </div>
                 </Card>
 
@@ -100,8 +100,8 @@ const CardsSection: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-2xl text-gray-900">Talent Hub</h3>
-                    <p className="text-lg text-gray-500">Job posting & Talent Acquisition</p>
+                    <h3 className="font-semibold md:text-xl lg:text-2xl text-gray-900">Talent Hub</h3>
+                    <p className="md:text-md lg:text-lg text-gray-500">Job posting & Talent Acquisition</p>
                   </div>
                 </Card>
             </div>
@@ -109,7 +109,7 @@ const CardsSection: React.FC = () => {
             {/* Third Column - One Card */}
               <Card className="w-full max-w-xl mx-auto bg-[#F8F9FC]  h-[520px] rounded-3xl">
                     <CardContent className="flex flex-col items-center text-left p-8 space-y-6 ">
-                      <div className="relative w-[280px] h-[450px] -mt-32">
+                      <div className="relative lg:w-[280px] lg:h-[450px] md:h-[400px] md:w-[240px] -mt-32">
                         <Image
                           src="/assets/img/card/iphone2.png"
                           alt="iPhone showing Connect & Explore app interface"
@@ -119,10 +119,10 @@ const CardsSection: React.FC = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <h2 className="text-2xl font-semibold text-gray-900">
+                        <h2 className="md:text-xl lg:text-2xl font-semibold text-gray-900">
                           Connect & Explore
                         </h2>
-                        <p className="text-gray-600 text-lg">
+                        <p className="text-gray-600 md:text-md lg:text-lg">
                           Networking platform for every stakeholder in real estate
                         </p>
                       </div>
@@ -137,8 +137,8 @@ const CardsSection: React.FC = () => {
 
             <div className="bg-[#F8F9FC] rounded-lg border overflow-hidden flex flex-col sm:flex-row items-stretch card-gray">
               <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
-                <h2 className="text-2xl font-semibold mb-2 md:px-4">Expanded Reach </h2>
-                <p className="text-gray-600 text-lg md:px-4">
+                <h2 className="md:text-xl lg:text-2xl font-semibold mb-2 md:px-4 ">Expanded Reach </h2>
+                <p className="text-gray-600 md:text-md lg:text-lg md:px-4">
                  Brand Awareness for Developers and their projects.
                 </p>
               </div>

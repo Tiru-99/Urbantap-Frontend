@@ -1,5 +1,6 @@
-
-import { MapPin, Home, Bath , Square} from 'lucide-react'
+"use client"
+import { useState } from 'react'
+import { MapPin, Home, Bath, Square , Expand } from 'lucide-react'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -51,7 +52,7 @@ const sampleListings: Listing[] = [
       avatar: 'R',
     },
     title: 'Luxury Villa',
-    description: '7 Bedrooms with a private pool',
+    description: ' 7 Bedrooms with a private pool7 Bedrooms with a private pool7 Bedrooms with a private pool7 Bedrooms with a private pool7 Bedrooms with a private pool',
     images: ['/assets/bedroom.jpg'],
     price: 'AED 600,000,000',
     location: '789 Beach Avenue',
@@ -136,15 +137,19 @@ const sampleListings: Listing[] = [
   }
 ]
 
+
+
 export default function PropertyListings() {
     //const [showDownloadPrompt, setShowDownloadPrompt] = useState(false)
+
+    const[clicked , setClicked] = useState(false);
     return (
       <>
       <FixedNavbar></FixedNavbar>
       <div className="container mx-auto px-4 py-6 max-w-5xl bg-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-medium">Looking or Selling..</h1>
+        <h1 className="text-xl font-semibold">Looking for Rental</h1>
       </div>
 
       {/* Listings */}
@@ -153,7 +158,7 @@ export default function PropertyListings() {
           <div 
             key={listing.id} 
             className={cn(
-              "max-w-3xl mx-auto",
+              "max-w-3xl mx-auto bg-white rounded-xl shadow-sm",
               index === 5 && "relative"
             )}
           >
@@ -167,71 +172,72 @@ export default function PropertyListings() {
               </div>
             )}
             
-            <div className="flex justify-between px-4 mt-20">
-              <div className="flex gap-2">
-                <Avatar className="w-16 h-16">
+            <div className="flex justify-between px-4 py-4">
+              <div className="flex gap-3">
+                <Avatar className="w-10 h-10">
                   <AvatarFallback>{listing.user.avatar}</AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col gap-0 pt-2">
-                  <h3 className="font-bold">{listing.user.name}</h3>
-                  <p className="text-gray-500">Black Brokers</p>
+                <div className="flex flex-col">
+                  <h3 className="font-semibold text-sm">{listing.user.name}</h3>
+                  <p className="text-sm text-muted-foreground">Luxury Homes Ltd.</p>
                 </div>
               </div>
-              <p className="text-gray-500">1 month ago</p>
+              <p className="text-sm text-muted-foreground">{listing.postedAt}</p>
             </div>
 
-            <h2 className="font-bold pt-3 text-2xl px-4">{listing.title}</h2>
-            <h3 className="font-light pt-2 truncate px-4">{listing.description}</h3>
+            <div className="px-4 pb-3">
+              <h2 className="text-sm font-semibold">{listing.title}</h2>
+              <p className="text-sm text-muted-foreground mt-1">{clicked || listing.description.length < 100 ?  (listing.description):(listing.description.slice(0,80))} {listing.description.length > 60 &&(
+                <span className='text-gray-600 font-bold cursor-pointer' onClick={()=>setClicked((prevState)=>!prevState)}>{clicked === true ? " ...Read Less" : " ...Read More"}</span>
+              )} </p>
+            </div>
 
-            <div className="aspect-video w-full h-[25rem] mt-2">
+            <div className="w-full md:h-[400px] h-[200px] relative">
               <img 
                 src={listing.images[0]}
                 alt={listing.title}
-                className="object-cover h-full w-full"
+                className="w-full h-full object-cover rounded-t-lg"
               />
             </div>
 
-            <div className="w-full bg-blue-50 rounded-b-xl flex flex-col gap-3">
-              <p className="font-extrabold text-2xl pt-3 pl-4">Budget: {listing.price}</p>
-              <div className="flex justify-start gap-1 pl-4 pb-3">
-                <MapPin className="w-5 h-5" />
-                <p className="text-gray-600">{listing.location}</p>
+            <div className="bg-blue-50 px-4 py-3">
+              <p className="font-semibold text-lg">Budget: {listing.price}</p>
+              <div className="flex items-center gap-2 mt-2">
+                <MapPin className="w-4 h-4 text-muted-foreground" />
+                <p className="text-sm text-muted-foreground">{listing.location}</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 px-4 sm:px-10">
-              {/* Property Features */}
-              <div className="flex items-center justify-between border-b py-3">
-                <div className="flex items-center gap-2 text-lg">
-                  <Home className="h-5 w-5 text-muted-foreground" />
-                  <span>{listing.details.bedrooms} BHK</span>
-                </div>
-                <div className="flex items-center gap-2 text-lg">
-                  <Bath className="h-5 w-5 text-muted-foreground" />
-                  <span>{listing.details.bathrooms} Bath</span>
-                </div>
-                <div className="flex items-center gap-2 text-lg">
-                  <Square className="h-5 w-5 text-muted-foreground" />
-                  <span>{listing.details.area}</span>
-                </div>
+            <div className="px-4 py-3 flex items-center justify-between border-b border-gray-100">
+              <div className="flex items-center gap-2">
+                <Home className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">{listing.details.bedrooms} BHK</span>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex items-center justify-between gap-4 pt-3">
-                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
-                  <img className="h-5 w-5" src="/assets/call-calling.png" alt="Call icon" />
-                  Call
-                </Button>
-                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
-                  <img className="h-5 w-5" src="/assets/send-2.png" alt="Enquire icon" />
-                  Enquire
-                </Button>
-                <Button variant="outline" className="flex-1 h-12 text-base gap-2">
-                  <img className="h-5 w-5" src="/assets/Share.png" alt="Share icon" />
-                  Share
-                </Button>
+              <div className="flex items-center gap-2">
+                <Bath className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">{listing.details.bathrooms} Bath</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Expand className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">{listing.details.area}</span>
               </div>
             </div>
+
+            <div className="grid grid-cols-3 p-4 border-t">
+              <button className="flex items-center justify-center gap-2 py-2.5 px-4 text-gray-600 bg-white rounded-none hover:bg-gray-100 text-sm font-medium border-r-2 border-gray-200 last:border-none">
+                <img className="h-5 w-5" src="/assets/call-calling.png" alt="Call icon" />
+                Call
+              </button>
+              <button className="flex items-center justify-center gap-2 py-2.5 px-4 text-gray-600 hover:bg-gray-100 bg-white rounded-none text-sm font-medium border-r-2 border-gray-200 last:border-none">
+                <img className="h-5 w-5" src="/assets/send-2.png" alt="Enquire icon" />
+                Inquire
+              </button>
+              <button className="flex items-center justify-center gap-2 py-2.5 px-4 text-gray-600 bg-white hover:bg-gray-50 rounded-lg text-sm font-medium">
+                <img className="h-5 w-5" src="/assets/Share.png" alt="Share icon" />
+                Share
+              </button>
+            </div>
+
             
           </div>
         ))}
@@ -240,5 +246,4 @@ export default function PropertyListings() {
     </>
     )
   }
-  
-  
+

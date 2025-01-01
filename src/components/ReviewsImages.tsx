@@ -30,7 +30,7 @@ const ImageAnimations: React.FC<ImageAnimationsProps> = ({ children }) => {
       {images.map((image, index) => (
         <motion.div
           key={image.id}
-          className="absolute w-[57px] h-[57px] bg-cover bg-center motion-div "
+          className="absolute lg:w-[57px] lg:h-[57px] bg-cover bg-center motion-div "
           style={{ left: image.left, top: image.top, backgroundImage: `url('../../assets/${image.src}')` }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{

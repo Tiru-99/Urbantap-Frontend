@@ -134,27 +134,42 @@ export default function PropertyDetails({
           <div>
             <h2 className="text-lg font-semibold mb-1">{title}</h2>
             
-            {/* Desktop View */}
+           {/* Desktop View */}
             <p className="text-sm text-muted-foreground mb-4 hidden md:block">
-              {readMore ? description : description.slice(0, 200)}
-              <span
-                className="text-gray-600 cursor-pointer font-bold"
-                onClick={() => setReadMore((prevState) => !prevState)}
-              >
-                {readMore ? " ...Read Less" : " ...Read More"}
-              </span>
+              {description.length > 80 && (
+                <>
+                  {readMore ? description : description.slice(0, 200)}
+                  {description.length > (readMore ? 0 : 200) && (
+                    <span
+                      className="text-gray-600 cursor-pointer font-bold"
+                      onClick={() => setReadMore((prevState) => !prevState)}
+                    >
+                      {readMore ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  )}
+                </>
+              )}
+              {description.length <= 80 && description}
             </p>
 
-            {/* Mobile View , slice function parameter has been changed*/}
+            {/* Mobile View */}
             <p className="text-sm text-muted-foreground mb-4 md:hidden">
-              {readMore ? description : description.slice(0, 120) }
-              <span
-                className="text-gray-600 cursor-pointer font-bold"
-                onClick={() => setReadMore((prevState) => !prevState)}
-              >
-                {readMore ? "See Less" : "See More"}
-              </span>
+              {description.length > 80 && (
+                <>
+                  {readMore ? description : description.slice(0, 120)}
+                  {description.length > (readMore ? 0 : 120) && (
+                    <span
+                      className="text-gray-600 cursor-pointer font-bold"
+                      onClick={() => setReadMore((prevState) => !prevState)}
+                    >
+                      {readMore ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  )}
+                </>
+              )}
+              {description.length <= 80 && description}
             </p>
+
 
             <div className="bg-blue-50 rounded-lg p-4">
               <p className="text-lg font-semibold">Rent: {rent}</p>
@@ -258,4 +273,3 @@ export default function PropertyDetails({
     </div>
   )
 }
-

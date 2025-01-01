@@ -14,8 +14,8 @@ const Card3: React.FC<Card3Props> = ({ title, desc, img }) => {
 
       {/* Content Section */}
       <div className="w-full sm:w-1/2">
-        {title && <h2 className="text-black text-2xl font-semibold px-4">{title}</h2>}
-        {desc && <p className="text-gray-500 mt-2 px-4 text-lg">{desc}</p>}
+        {title && <h2 className="text-black md:text-xl lg:text-2xl font-semibold px-4">{title}</h2>}
+        {desc && <p className="text-gray-500 mt-2 px-4 md:text-md lg:text-lg">{desc}</p>}
       </div>
 
       {/* Image Section */}

@@ -7,6 +7,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import TabletReviewsSection from "./TableReviewsSection";
 
 const reviews = [
   {
@@ -44,57 +45,66 @@ const ReviewsSection: React.FC = () => {
   }, [emblaApi]);
 
   return (
-    <div className="md:flex md:justify-center md:items-center w-full">
-      <div className="hidden md:block w-full max-w-[1440px] relative">
-        <ImageAnimations>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            plugins={[
-              Autoplay({
-                delay: 4000,
-              }),
-            ]}
-            className="w-full"
-            ref={emblaRef}
-          >
-            <CarouselContent>
-              {reviews.map((review, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative w-full h-[850px] bg-white flex flex-col justify-center items-center">
-                    <div className="w-[898px] h-[240px] text-center text-black text-[40px] font-medium leading-[120%]">
-                      {review.text}
-                      <span className="text-[#0ECC88]">
-                        {" "}
-                        {review.highlight}
-                      </span>
-                    </div>
+    <div className="w-full">
+      {/* Desktop View */}
+      <div className="hidden sm:hidden md:hidden lg:flex lg:justify-center lg:items-center w-full">
+        <div className="w-full max-w-[1440px] relative">
+          <ImageAnimations>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                }),
+              ]}
+              className="w-full"
+              ref={emblaRef}
+            >
+              <CarouselContent>
+                {reviews.map((review, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative w-full h-[850px] bg-white flex flex-col justify-center items-center">
+                      <div className="w-[898px] h-[240px] text-center text-black text-[40px] font-medium leading-[120%]">
+                        {review.text}
+                        <span className="text-[#0ECC88]">
+                          {" "}
+                          {review.highlight}
+                        </span>
+                      </div>
 
-                    <div className="flex flex-col justify-center items-center w-[251px] mt-8">
-                      <div className="text-black text-[20px] font-semibold leading-[125%] text-center">
-                        {review.name}
-                      </div>
-                      <div className="text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%]">
-                        {review.position}
+                      <div className="flex flex-col justify-center items-center w-[251px] mt-8">
+                        <div className="text-black text-[20px] font-semibold leading-[125%] text-center">
+                          {review.name}
+                        </div>
+                        <div className="text-center text-[16px] text-[#0A1330CC] font-normal leading-[125%]">
+                          {review.position}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2" >
-              <ChevronLeft className="h-6 w-6"/>
-            </CarouselPrevious>
-            <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2" >
-              <ChevronRight className="h-6 w-6"/>
-            </CarouselNext>
-          </Carousel>
-        </ImageAnimations>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <ChevronLeft className="h-6 w-6" />
+              </CarouselPrevious>
+              <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                <ChevronRight className="h-6 w-6" />
+              </CarouselNext>
+            </Carousel>
+          </ImageAnimations>
+        </div>
       </div>
 
-      <div className="w-full max-w-[1440px] h-auto bg-white lg:h-[850px] md:hidden sm:block pt-10">
+      {/* Tablet View */}
+      <div className="hidden md:flex lg:hidden w-[768px]">
+        <TabletReviewsSection reviews={reviews}></TabletReviewsSection>
+      </div>
+
+      {/* Mobile View */}
+      <div className=" md:hidden w-full max-w-[1440px] h-auto bg-white lg:h-[850px] pt-10">
         <Carousel
           opts={{
             align: "start",
@@ -112,7 +122,6 @@ const ReviewsSection: React.FC = () => {
             {reviews.map((review, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-auto bg-white lg:h-[850px] px-4 py-8 flex flex-col justify-center items-center">
-                  {/* Review Text Section */}
                   <div className="w-full h-auto lg:w-[898px] lg:h-[240px] bg-white mx-auto text-center px-4 lg:px-0 text-black text-[20px] lg:text-[40px] font-medium leading-[140%] lg:leading-[120%]">
                     <p className="text-start">
                       "{review.text}"
@@ -121,8 +130,6 @@ const ReviewsSection: React.FC = () => {
                       {review.highlight}
                     </p>
                   </div>
-
-                  {/* Reviewer Info */}
                   <div className="flex flex-col items-start w-full mt-8 pl-5">
                     <div className="text-black text-[18px] lg:text-[20px] font-semibold leading-[125%] text-start">
                       {review.name}
@@ -139,7 +146,7 @@ const ReviewsSection: React.FC = () => {
             <CarouselPrevious className="relative inset-0 translate-y-0">
               <ChevronLeft className="h-6 w-6" />
             </CarouselPrevious>
-            <CarouselNext className="relative inset-0 translate-y-0" >
+            <CarouselNext className="relative inset-0 translate-y-0">
               <ChevronRight className="h-6 w-6" />
             </CarouselNext>
           </div>
@@ -150,4 +157,3 @@ const ReviewsSection: React.FC = () => {
 };
 
 export default ReviewsSection;
-
